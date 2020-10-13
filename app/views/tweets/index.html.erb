@@ -1,8 +1,12 @@
 <main>
-<div class = "tweets-container">
-  <div class = "tweets-image">
+  <div class = "tweets-container">
+    <% @tweets.each do |tweet| %> 
+      <div class = "tweets-image">
+        <%# <%= render partial: "tweet", locals: { tweet: tweet } %> %>
+      </div>
+      <div class = "tweets-comment">
+      </div>
+
+    <% end %>
   </div>
-  <div class = "tweets-comment">
-  </div>
-</div>
 </main>
