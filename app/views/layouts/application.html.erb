@@ -10,6 +10,21 @@
   </head>
 
   <body>
+  <header class = "top-logo-class" >
+  <div class = "header-title">
+    <a>タイトル</a>    
+  </div>
+   <div class="header-btn">
+    <ul class = "header-left">
+       <li><%= link_to "TOP", "/" %></li>
+       <li><%= link_to "投稿", "/" %></li>
+       <li><%= link_to "検索", "/" %></li>
+    </ul>
+      <ul class = "header-right">
+       <li><%= link_to "ログイン", "/" %></li>
+      </ul>
+   </div> 
+</header>
     <%= yield %>
   </body>
 </html>
