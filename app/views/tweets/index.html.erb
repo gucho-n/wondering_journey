@@ -2,6 +2,9 @@
   <div class = "tweets-container">
     <% @tweets.each do |tweet| %> 
       <div class = "tweets-image">
+         <%=tweet.address %>
+         <%=tweet.name %>
+         <%=tweet.recommend %>
         <%# <%= render partial: "tweet", locals: { tweet: tweet } %> %>
       </div>
       <div class = "tweets-comment">
