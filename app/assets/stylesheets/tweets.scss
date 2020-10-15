@@ -29,18 +29,22 @@
 main{
   height: 70vh;
 }
+.tweets-each{
+  display: flex;
+}
 .tweets-container{
  
   height: 70vh;
   width: 100vw;
   display: flex;
+ 
 }
 .tweets-image{
   background-color:pink;
   width: 70vw;
-  display: flex;
 }
 .tweets-title{
+  background-color: aqua;
   display: flex;
   list-style: none;
   justify-content: space-between;

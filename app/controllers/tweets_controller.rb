@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all
-    @user = current_user
+  
     @comment = Comment.new
     @text = Comment.all
   end
@@ -9,8 +9,13 @@ class TweetsController < ApplicationController
   def show
    
   end
+  
+  def show
+  
+  end
 
   def new
+
    @tweet = Tweet.new
   end
   #form_withは遷移先でインスタンス変数を生成すべきなのか？
