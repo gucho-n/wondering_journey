@@ -25,6 +25,7 @@
   display: flex;
   list-style: none;
 }
+
 main{
   height: 70vh;
 }
@@ -37,6 +38,12 @@ main{
 .tweets-image{
   background-color:pink;
   width: 70vw;
+  display: flex;
+}
+.tweets-title{
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
 }
 .tweets-comment{
   background-color:orange;
