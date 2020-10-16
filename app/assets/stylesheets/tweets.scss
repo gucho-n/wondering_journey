@@ -1,9 +1,12 @@
 // Place all the styles related to the tweets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.top-logo-class{
+  width: 100vw;
+}
 
 .header-title{
+  width: 100vw;
   background-color: blue;
   height: 10vh;
 }
@@ -22,7 +25,45 @@
   display: flex;
   list-style: none;
 }
-.post-container{
-  background-color:peru;
+
+main{
+  height: 70vh;
+}
+.seach{
+  height: 5vh;
+}
+.tweets-each{
+  display: flex;
+}
+.tweets-container{
+ 
+  height: 70vh;
+  width: 100vw;
+  display: flex;
+ 
+}
+.tweets-image{
+  background-color:pink;
+  width: 70vw;
+}
+.tweets-title{
+  background-color: aqua;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+.tweets-comment{
+  background-color:orange;
+  width: 30vw;
 }
 
+// 詳細
+.tweet-title{
+  background-color:orange;
+  display: flex;
+  width: 50vw;
+}
+.google-map{
+ 
+  width: 50vw;
+}

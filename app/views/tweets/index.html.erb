@@ -1,5 +1,47 @@
 <main>
-<div class = post-container>
-
+<div class = "seach">
+<%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+<% end %>
 </div>
+
+  <div class = "tweets-container">
+    <% @tweets.each do |tweet| %> 
+      <div class = "tweets-each">
+
+        <div class= "tweets-image">
+          <ul class = "tweets-title">
+            <li>タイトル  <%=tweet.name %></li>
+            <li>住所  <%=tweet.address %></li>
+            <li>備考  <%=tweet.recommend %></li>
+            <%# <%= render partial: "tweet", locals: { tweet: tweet } %> %>
+          </ul>
+        
+          <div class = "tweets-pic">
+            <%= link_to image_tag(tweet.image), tweet_path(tweet.id), class: 'message-image' if tweet.image.attached? %>
+            
+          </div>
+        </div>
+
+        <div class = "tweets-comment"> 
+        <%# ここで欲しいデータはtweetのID→@tweetはallだからeachメソッドを使わなきゃいけない %>
+          <%= form_with model: @comment ,url:tweet_comments_path(tweet.id) ,method: :post,local: true do |f| %>
+          <%# (@tweets.map {|item| item.id}[0])  %>
+            <p>コメント入力</p>
+            <%= f.text_field :text, class:"tweet-text", id:"tweet-address", placeholder:"コメントを入力", maxlength:"40" %> 
+            <%= f.submit "SEND" %>
+          <% end %>
+            
+          <% @text.each do |text| %> 
+            <ul class = "get-comment">
+              <li><b><%=text.text %></b><%=text.user.nickname %> 
+            </ul>
+          <% end %>
+
+        </div>
+      </div>
+
+    <% end %>
+  </div>
 </main>
