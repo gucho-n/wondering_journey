@@ -1,0 +1,17 @@
+<main>
+<div class = "tweet">
+<ul class = "tweet-title">
+<li>名称<%= @tweet.name %></li>
+</ul>
+<div class = "tweets-pic">
+<%= link_to image_tag(@tweet.image), tweet_path(@tweet.id), class: 'message-image' if @tweet.image.attached? %>
+</div>
+<ul class = "tweet-detail">
+<li>かかった費用<%= @tweet.cost %></li>
+<li>所在地<%= @tweet.address %></li>
+<li>備考<%= @tweet.recommend %></li>
+<li>あなたの家からおよそ何分でいけます<%= @tweet.recommend %></li>
+</ul>
+<div class = "tweet">
+</div>
+</main>
