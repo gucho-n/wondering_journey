@@ -7,12 +7,10 @@ class TweetsController < ApplicationController
   end
 
   def show
-   
+   @tweet = Tweet.find(params[:id])
+  #  ここではurlにあるパラムスを取得することによって指定したカラムを手にすることができます
   end
   
-  def show
-  
-  end
 
   def new
 
@@ -27,4 +25,10 @@ class TweetsController < ApplicationController
   def tweet_params
     params.require(:tweet).permit(:name, :address, :image, :recommend, :cost).merge(user_id: current_user.id)
   end
+  def search
+    @tweetsearch = Tweet.search(params[:keyword])
+    binding.pry
+  end
+  
+
 end

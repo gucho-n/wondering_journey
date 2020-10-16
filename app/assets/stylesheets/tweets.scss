@@ -29,6 +29,9 @@
 main{
   height: 70vh;
 }
+.seach{
+  height: 5vh;
+}
 .tweets-each{
   display: flex;
 }
@@ -55,6 +58,12 @@ main{
 }
 
 // 詳細
-.tweets-comment{
+.tweet-title{
   background-color:orange;
+  display: flex;
+  width: 50vw;
+}
+.google-map{
+ 
+  width: 50vw;
 }
