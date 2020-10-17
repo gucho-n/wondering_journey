@@ -12,16 +12,42 @@
     <li>備考<%= @tweet.recommend %></li>
     <li>あなたの家からおよそ何分でいけます<%= @tweet.recommend %></li>
   </ul>
-    <div id="map"></div>
-      <script>
-        var MyLatLng = new google.maps.LatLng(35.6811673, 139.7670516);
-        var Options = {
-        zoom: 15,      //地図の縮尺値
-        center: MyLatLng,    //地図の中心座標
-        mapTypeId: 'roadmap'   //地図の種類
-        };
-        var map = new google.maps.Map(document.getElementById('map'), Options);
-      </script>
+    <%# ここから書きます %>
+    <h2>gmap</h2>
+<div id='map'></div>
+
+<style>
+#map {
+  height: 600px;
+  width: 600px;
+}
+</style>
+
+<script>
+let map
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 40.7828, lng:-73.9653},
+    zoom: 12,
+  });
+
+  marker = new google.maps.Marker({
+    position:  {lat: 40.7828, lng:-73.9653},
+    map: map
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4sHRV0I9mbiVq5KVr4Kof38euJ_g29ns&callback=initMap" async defer></script>
+
+  <%# Googlemap %>
+  <%# 1,Google Maps JavaScript APIを読み込む際に、パラメーターのkeyの値としてAPIキーを指定すればOKです。 %>
+  <%# <script src="http://maps.google.com/maps/api/js?key={AIzaSyC4sHRV0I9mbiVq5KVr4Kof38euJ_g29ns}&language=ja"></script> %>
+
+
+
     
  
 </div>  
