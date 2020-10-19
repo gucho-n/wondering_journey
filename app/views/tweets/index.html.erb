@@ -1,10 +1,13 @@
 <main>
-<div class = "seach">
+<div class = "search-top">
+<div class = "search">
 <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
   <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
 </div>
+</div>
+
 
   <div class = "tweets-container">
     <% @tweets.each do |tweet| %> 
@@ -12,32 +15,39 @@
 
         <div class= "tweets-image">
           <ul class = "tweets-title">
-            <li>タイトル  <%=tweet.name %></li>
-            <li>住所  <%=tweet.address %></li>
-            <li>備考  <%=tweet.recommend %></li>
-            <%# <%= render partial: "tweet", locals: { tweet: tweet } %> %>
+            <li>撮影地  <%=tweet.name %></li>
+            <li>投稿者  <%=tweet.user.nickname %></li>
+            <%# <%= render partial: "tweet", locals: { tweet: tweet } %>
           </ul>
         
           <div class = "tweets-pic">
-            <%= link_to image_tag(tweet.image), tweet_path(tweet.id), class: 'message-image' if tweet.image.attached? %>
-            
+            <%= link_to image_tag(tweet.image.variant(resize: '1200x1200')), tweet_path(tweet.id), class: 'message-image' if tweet.image.attached? %>
+       
           </div>
         </div>
 
         <div class = "tweets-comment"> 
+           <p class = "comment-title">コメント一覧</p>
         <%# ここで欲しいデータはtweetのID→@tweetはallだからeachメソッドを使わなきゃいけない %>
           <%= form_with model: @comment ,url:tweet_comments_path(tweet.id) ,method: :post,local: true do |f| %>
           <%# (@tweets.map {|item| item.id}[0])  %>
-            <p>コメント入力</p>
+           
+        
+          <% @text.each do |text| %> 
+            <ul class = "get-comment">
+            <% if text.user_id == current_user.id %>
+             <%# <%= link_to image_tag "fuki1.jpg",:size => '600x40',class:"fuki" %> 
+              <li class = "incomment"><b><%=text.text %></b><%=text.user.nickname %></li> 
+            <% else%>
+              <%# <%= link_to image_tag "fuki2.jpg",:size => '600x40',class:"fuki" %> 
+              <li class = "incomment"><b><%=text.text %> %></b><%=text.user.nickname %></li> 
+            </ul>
+             <% end %>
+          <% end %>
             <%= f.text_field :text, class:"tweet-text", id:"tweet-address", placeholder:"コメントを入力", maxlength:"40" %> 
             <%= f.submit "SEND" %>
           <% end %>
             
-          <% @text.each do |text| %> 
-            <ul class = "get-comment">
-              <li><b><%=text.text %></b><%=text.user.nickname %> 
-            </ul>
-          <% end %>
 
         </div>
       </div>
