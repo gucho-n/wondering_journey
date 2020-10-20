@@ -1,24 +1,38 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##アプリケーション名 wondering_journey(放浪の旅という単語はwanderingですが、wonderという不思議、興味本意という単語でもじりました。)	
+アプリケーション概要	このアプリケーションは、投稿者の旅行の写真を見て、閲覧者がそこに行ってみたいと思ってもらえることが目的です。google mapと同期をして距離と料金を非同期通信で算出してくれます。ペルソナは、投稿者は３０代男女、閲覧者は50代から60代の初老の男女を目指しております。
+その為、極力シンプルでわかりやすいデザインにしました。旅行に行かなくなる主な理由は『めんどくさくなるから』だと思うので、閲覧者には旅行は難しくないんだよ。と思ってほしいです。
+投稿者には、閲覧者から御礼を受け取れるようにしたいと思います。
 
-Things you may want to cover:
+###URL	https://wonderingjourney.herokuapp.com/。
+###テスト用アカウント	すみません、まだです。
+###利用方法	閲覧者はツイート詳細、いいね機能を使用可能。ログインすると,お礼機能、コメント可能。投稿者はログイン必須。
+目指した課題解決	旅行者がもっと気軽に、また隠れた名所をもっと開拓できるように、よりシンプルに発見ができるアプリケーションです。
 
-* Ruby version
+###洗い出した要件	
 
-* System dependencies
 
-* Configuration
+ユーザー認証機能:ログインしているユーザ画像投稿/及びコメントが使える
+画像一覧表示機能:ユーザーが投稿した画像をトップページに一覧表示させる。
+検索機能:旅行先の住所をキーワード検索ができる
+コメント投稿機能:投稿者が旅行で行った場所の詳細やコメントを記入することができる。
 
-* Database creation
+画像投稿作成機能:投稿者が旅行先の写真を投稿できる
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+###これから実装予定の要件	
+御礼機能:投稿を元に旅行にいった閲覧者が投稿者に対して、任意のチップを渡せるようにする
+画像削除機能:投稿者が旅行先の写真を削除できる
+画像編集機能:投稿者が旅行先の写真を編集できる
+コメント削除機能:投稿者が写真に対して投稿を削除できる
+コメント編集機能:投稿者が写真に対して投稿を編集できる
+GooGleマップ機能:投稿した画像の場所を、GooGle mapで表示
+いいね機能:閲覧者が気に入ったらいいねを押せる機能
 
-* Deployment instructions
 
-* ...
+###データベース設計	
+https://app.diagrams.net/#DWondering%20jorney.drawio
+
+ローカルでの動作方法	
+rails 6.0,0を使用しています
