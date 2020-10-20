@@ -13,7 +13,7 @@
 
   <body>
   <header class = "top-logo-class" >
-  <div class="header-top">
+
   <%= image_tag 'header.jpg' ,class: 'header-image' %> 
   <div class="header-btn">
     <ul class = "header-left">
@@ -31,6 +31,7 @@
        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"edit-link" %></li>
       <% end %>
     </ul>
+
   </div> 
 </header>
     <%= yield %>
