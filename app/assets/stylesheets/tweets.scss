@@ -3,10 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 header{
   position: fixed;
+  text-align:center;//加える
 }
 .header-image{
   width: 100vw;
   height: 15vh;
+  vertical-align:top;//加える
 }
 .header-btn{
  
@@ -32,6 +34,11 @@ header{
   font-size: 30px;
   display: flex;
   list-style: none;
+}
+.side-bar{
+  width: 10vw;
+  height: 100vh;
+  background-color: gainsboro;
 }
 //indexから
 
