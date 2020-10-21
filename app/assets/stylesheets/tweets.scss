@@ -35,14 +35,21 @@ header{
   display: flex;
   list-style: none;
 }
-.main{
+.body{
   display: flex;
 }
-.side-bar{
-  width: 10vw;
+aside{
+  width: 15vw;
   height: 100vh;
   background-color: gainsboro;
 }
+main{
+  width: 80vw;
+  padding-top: 25vh;
+  flex: 1;
+}
+
+
 footer{
   // position: fixed;
   // text-align:center;//加える
@@ -57,40 +64,22 @@ footer{
 // }
 //indexから
 
-main{
-padding-top: 300px;
-  
-}
+
 .search-top{
-display: flex;
-justify-content: center;
+  text-align: center;
 }
 .search{
   height: 5vh;
 }
 .search-input{
   width: 20vw;
- 
-}
-.tweets-each{
-  display: flex;
-  justify-content: space-between;
 }
 .tweets-container{
- 
-
+ display: flex;
 }
 .tweet-image{
   width: 70vw;
 }
-.tweets-title{
-  font-size: 30px;
-  height: 5vh;
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-}
-
 .tweets-comment{
   
   width: 30vw;

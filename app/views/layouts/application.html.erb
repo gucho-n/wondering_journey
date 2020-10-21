@@ -12,6 +12,7 @@
   </head>
 
   <body>
+
     <header class = "top-logo-class" >
       <div class="header-top">
       <%= image_tag 'header.jpg' ,class: 'header-image' %> 
@@ -24,19 +25,26 @@
           <ul class = "header-right">
       
           <% unless user_signed_in? %>
-          <li><%= link_to "新規登録", new_user_registration_path,class:"edit-link" %></li>
-          <li><%= link_to "ログイン", new_user_session_path,class:"edit-link" %></li>
+          <li><%= link_to "新規登録", new_user_registration_path,class:"edit-link" %></li>          <li><%= link_to "ログイン", new_user_session_path,class:"edit-link" %></li>
           <% else %>
           <li><%= link_to "ユーザー編集", edit_user_registration_path,class:"edit-link" %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"edit-link" %></li>
           <% end %>
         </ul>
       </div> 
-
     </header>
-    <div class = side-bar>
+    <div class = "body">
+      <aside>
+      <ul>
+      <li></li>
+      <li><li>
+      </ul>
+      </aside>
+      <main>
+        <%= yield %> 
+      </main>
     </div>
-     <%= yield %> 
+  </body>  
   <footer>
       <%# <%= image_tag "sunset.jpg" ,class: '.footer-image' %> 
   </footer>
