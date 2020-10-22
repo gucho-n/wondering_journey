@@ -64,25 +64,48 @@ footer{
 // }
 //indexから
 
-
+.right-title{
+display: flex;
+height: 10vh;
+}
 .search-top{
   text-align: center;
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.search{
+.search-form{
   height: 5vh;
 }
 .search-input{
   width: 20vw;
 }
+.comment-title{
+  width: 30vw;
+}
+
 .tweets-container{
  display: flex;
 }
 .tweet-image{
   width: 70vw;
 }
+.tweet-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+.post-place{
+  font-size: 30px;
+}
+.post-name{
+  font-size: 20px;
+}
 .tweets-comment{
-  
   width: 30vw;
+  background-color: burlywood;
 }
 .comment-title{
   font-size: 30px;
@@ -91,6 +114,16 @@ footer{
 .tweet-text{
   font-size: 25px;
   padding-bottom: 0;
+}
+.each-comment{
+  display: flex;
+  justify-content: space-between;
+}
+.in-comment{
+  font-size: 25px;
+}
+.comment-name{
+  font-size: 15px;
 }
 // .fuki{
 //  position: relative;
