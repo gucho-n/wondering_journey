@@ -1,29 +1,31 @@
-<main>
-<div class = "tweet">
-  <ul class = "tweet-title">
-    <li>名称<%= @tweet.name %></li>
-  </ul>
+<div class = "main-container">
+  <div class = "main-image">
+    <ul class = "tweet-title">
+      <li>名称<%= @tweet.name %></li>
+    </ul>
     <div class = "tweets-pic">
-      <%= link_to image_tag(@tweet.image), tweet_path(@tweet.id), class: 'message-image' if @tweet.image.attached? %>
+      <%= link_to image_tag(@tweet.image.variant(resize: '900x900')), tweet_path(@tweet.id), class: 'message-image' if @tweet.image.attached? %>
     </div>
-  <ul class = "tweet-detail">
-    <li>かかった費用<%= @tweet.cost %></li>
-    <li>所在地<%= @tweet.address %></li>
-    <li>備考<%= @tweet.recommend %></li>
-    <li>あなたの家からおよそ何分でいけます<%= @tweet.recommend %></li>
-  </ul>
+    <ul class = "tweet-detail">
+      <li>かかった費用<%= @tweet.cost %></li>
+      <li>所在地<%= @tweet.address %></li>
+      <li>備考<%= @tweet.recommend %></li>
+      <li>あなたの家からおよそ何分でいけます<%= @tweet.recommend %></li>
+    </ul>
+  </div>
     <%# ここから書きます %>
+<div class = "main-map">
     <h2>gmap</h2>
 <!-- 検索機能の追加 -->
 <input id="address" type="textbox" value="GeekSalon">
 <input type="button" value="Encode" onclick="codeAddress()">
 <!-- ここまで追加-->
 <div id='map'></div>
-
+<div class = "main-map">
 <style>
 #map {
-  height: 600px;
-  width: 600px;
+  height: 900px;
+  width: 900px;
 }
 </style>
 
@@ -71,8 +73,6 @@ function codeAddress(){
   <%# <script src="http://maps.google.com/maps/api/js?key={AIzaSyC4sHRV0I9mbiVq5KVr4Kof38euJ_g29ns}&language=ja"></script> %>
 
 
-
-    
- 
+</div>
 </div>  
-</main>
+

@@ -69,6 +69,7 @@ footer{
 // }
 //indexから
 
+
 .right-title{
 display: flex;
 height: 10vh;
@@ -144,17 +145,23 @@ height: 10vh;
 
 
 // 詳細
-.tweet{
-  background-color: cadetblue;
-}
-.tweet-title{
-  
+.main-container{
   display: flex;
-  width: 50vw;
+  justify-content: center;
+}
+.main-image{
+  width: 50%;
+}
+
+.tweet-title{
+  text-align: center;
+  font-size: 30px;
+}
+.main-map{
+  width: 50%;
 }
 
  .map{
-    width: 700px;
-    height: 400px;
+    width: 100px;
+    height: 100px;
 }
-
