@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 header{
-  position: fixed;z-index:300;
-  text-align:center;//加える
+  position: fixed;z-index:100;//z-index:10;を追加
+  text-align:center;
 }
 .header-image{
   width: 100vw;
   height: 15vh;
-  vertical-align:top;//加える
+  vertical-align:top;
 }
 .header-btn{
  
@@ -35,13 +35,16 @@ header{
   display: flex;
   list-style: none;
 }
+
 .body{
   display: flex;
 }
+
 aside{
   width: 15vw;
-  height: 100vh;
+  height: 1000vh;
   background-color: gainsboro;
+  
 }
 main{
   width: 80vw;
@@ -56,6 +59,8 @@ footer{
   background-color: black;
   width: 100vw;
   height: 5vh;
+  bottom: 0; /*下に固定*/
+
 }
 // .footer-image{
 //   width: 100vw;
@@ -106,14 +111,14 @@ height: 10vh;
 .tweets-comment{
   width: 30vw;
   background-color: burlywood;
-  position: relative;z-index:100;
+  position: relative;z-index: 1;
 }
 .comment-title{
   font-size: 30px;
   text-align :center;
 }
 .tweet-text{
-  font-size: 25px;
+  font-size: 50px;
   padding-bottom: 0;
 }
 .each-comment{
@@ -121,15 +126,14 @@ height: 10vh;
   justify-content: space-between;
 }
 .in-comment{
-  font-size: 25px;
+  font-size: 30px;
 }
 .comment-name{
-  font-size: 15px;
+  font-size: 20px;
 }
 .btn-input{
   position: absolute;
   bottom: 0;
-
 }
 // .fuki{
 //  position: relative;
@@ -140,6 +144,9 @@ height: 10vh;
 
 
 // 詳細
+.tweet{
+  background-color: cadetblue;
+}
 .tweet-title{
   
   display: flex;

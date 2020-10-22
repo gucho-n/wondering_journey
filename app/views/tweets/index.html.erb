@@ -9,40 +9,33 @@
 </div>
  <p class = "comment-title">コメント一覧</p>
 </div>
-
-
-  <div class = "tweets-container">
+  <div class = "tweets">
     <% @tweets.each do |tweet| %> 
-      
-
+     <div class = "tweets-container">
         <div class= "tweet-image">
           <ul class = "tweet-title"> 
             <li class = "post-place">撮影地  <%=tweet.name %></li>
             <li class = "post-name">投稿者  <%=tweet.user.nickname %></li>
             <%# <%= render partial: "tweet", locals: { tweet: tweet } %>
           </ul>
-        
           <div class = "tweets-pic">
             <%= link_to image_tag(tweet.image.variant(resize: '1200x1200')), tweet_path(tweet.id), class: 'message-image' if tweet.image.attached? %>
-       
           </div>
         </div>
-
         <div class = "tweets-comment"> 
-          
         <%# ここで欲しいデータはtweetのID→@tweetはallだからeachメソッドを使わなきゃいけない %>
           <%= form_with model: @comment ,url:tweet_comments_path(tweet.id) ,method: :post,local: true do |f| %>
           <%# (@tweets.map {|item| item.id}[0])  %>
-           
-        
           <% @text.each do |text| %> 
             <ul class = "get-comment">
             <% if text.user_id == current_user.id %>
              <%# <%= link_to image_tag "fuki1.jpg",:size => '600x40',class:"fuki" %> 
              <div class = "each-comment">
+             
               <li class = "in-comment"><b><%=text.text %></li> </b>
               <li class = "comment-name"><%=text.user.nickname %></li> 
               </div>
+         
             <% else%>
               <%# <%= link_to image_tag "fuki2.jpg",:size => '600x40',class:"fuki" %> 
              <div class = "each-comment">
@@ -58,10 +51,8 @@
           </div>
           <% end %>
             
-
         </div>
-      
-
+      </div>
     <% end %>
   </div>
 
