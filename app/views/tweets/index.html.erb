@@ -52,8 +52,10 @@
             </ul>
              <% end %>
           <% end %>
-            <%= f.text_field :text, class:"tweet-text", id:"tweet-address", placeholder:"コメントを入力", maxlength:"40" %> 
+          <div class = "btn-input">
+            <%= f.text_field :text, class:"comment-form", id:"tweet-form", placeholder:"コメントを入力", maxlength:"40" %> 
             <%= f.submit "SEND" %>
+          </div>
           <% end %>
             
 

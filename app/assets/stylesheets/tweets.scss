@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 header{
-  position: fixed;
+  position: fixed;z-index:300;
   text-align:center;//加える
 }
 .header-image{
@@ -106,6 +106,7 @@ height: 10vh;
 .tweets-comment{
   width: 30vw;
   background-color: burlywood;
+  position: relative;z-index:100;
 }
 .comment-title{
   font-size: 30px;
@@ -124,6 +125,11 @@ height: 10vh;
 }
 .comment-name{
   font-size: 15px;
+}
+.btn-input{
+  position: absolute;
+  bottom: 0;
+
 }
 // .fuki{
 //  position: relative;
