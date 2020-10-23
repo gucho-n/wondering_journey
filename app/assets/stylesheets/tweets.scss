@@ -68,6 +68,9 @@ footer{
 //   vertical-align:top;//加える
 // }
 //indexから
+.message-image{
+  
+}
 
 
 .right-title{
@@ -77,25 +80,34 @@ height: 10vh;
 .search-top{
   text-align: center;
   width: 70vw;
+  font-size: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .search-form{
   height: 5vh;
+  height: 10vh;
 }
 .search-input{
   width: 20vw;
+  font-size: 5vh;
+}
+.comment-title-container{
+  width: 30vw;
+
 }
 .comment-title{
-  width: 30vw;
+ font-size: 5%;;
 }
 
 .tweets-container{
  display: flex;
+ padding: 1%;
 }
 .tweet-image{
   width: 70vw;
+  padding: 1%;
 }
 .tweet-title{
   display: flex;
@@ -104,10 +116,10 @@ height: 10vh;
  
 }
 .post-place{
-  font-size: 30px;
+  font-size: 40px;
 }
 .post-name{
-  font-size: 20px;
+  font-size: 40px;
 }
 .tweets-comment{
   width: 30vw;
@@ -130,11 +142,14 @@ height: 10vh;
   font-size: 30px;
 }
 .comment-name{
-  font-size: 20px;
+  font-size: 30px;
 }
 .btn-input{
   position: absolute;
   bottom: 0;
+}
+.comment-form{
+  font-size: 20px;
 }
 // .fuki{
 //  position: relative;
