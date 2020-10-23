@@ -26,31 +26,32 @@
         </div>
         <div class = "tweets-comment"> 
         <%# ここで欲しいデータはtweetのID→@tweetはallだからeachメソッドを使わなきゃいけない %>
-          <%= form_with model: @comment ,url:tweet_comments_path(tweet.id) ,method: :post,local: true do |f| %>
+          
           <%# (@tweets.map {|item| item.id}[0])  %>
-          <% @text.each do |text| %> 
-            <ul class = "get-comment">
-            <% if text.user_id == current_user.id %>
+          
+            
+           
              <%# <%= link_to image_tag "fuki1.jpg",:size => '600x40',class:"fuki" %> 
-             <div class = "each-comment">
              
-              <li class = "in-comment"><b><%=text.text %></li> </b>
-              <li class = "comment-name"><%=text.user.nickname %></li> 
+              <% tweet.comments.each do |text| %> 
+              <div class = "each-comment">
+                <ul class = "get-comment">
+                <li class = "in-comment"><b><%=text.text %></li> 
+                <li class = "comment-name"><%=tweet.user.nickname %></li> 
+                </ul>
               </div>
          
-            <% else%>
+          
               <%# <%= link_to image_tag "fuki2.jpg",:size => '600x40',class:"fuki" %> 
-             <div class = "each-comment">
-              <li class = "in-comment"><b><%=text.text %></li> </b>
-              <li class = "comment-name"><%=text.user.nickname %></li> 
-              </div> 
-            </ul>
-             <% end %>
-          <% end %>
+           
+            
+          
+        <%= form_with model: @comment ,url:tweet_comments_path(tweet.id) ,method: :post,local: true do |f| %>
           <div class = "btn-input">
             <%= f.text_field :text, class:"comment-form", id:"tweet-form", placeholder:"コメントを入力", maxlength:"40" %> 
             <%= f.submit "SEND" %>
           </div>
+          <% end %>
           <% end %>
             
         </div>

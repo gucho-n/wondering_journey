@@ -3,7 +3,6 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all
   
     @comment = Comment.new
-    @text = Comment.all
   end
 
   def show
@@ -20,6 +19,7 @@ class TweetsController < ApplicationController
 
   def create
    @tweet = Tweet.create(tweet_params)
+  
   end
   
   def tweet_params
