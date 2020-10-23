@@ -1,38 +1,34 @@
   <div class = "main-detail">
     <p>詳細</p>
   </div>
-<p class = "tweet-title"><p>名称:<%= @tweet.name %></p></p>
-
+  <p class = "tweet-title"><p>名称:<%= @tweet.name %></p></p>
 <div class = "main-container">
-  
-
     <div class = "main-image">
-
-      <div class = "tweets-pic">
-        <%= link_to image_tag(@tweet.image.variant(resize: '900x900')), tweet_path(@tweet.id), class: 'message-image' if @tweet.image.attached? %>
-      </div>
-      <ul class = "tweet-detail">
+       <div class = "tweets-pic">
+          <%= link_to image_tag(@tweet.image.variant(resize: '900x900')), tweet_path(@tweet.id), class: 'message-image' if @tweet.image.attached? %>
+       <ul> 
         <li>かかった費用<%= @tweet.cost %></li>
         <li>所在地<%= @tweet.address %></li>
         <li>備考<%= @tweet.recommend %></li>
         <li>あなたの家からおよそ何分でいけます<%= @tweet.recommend %></li>
       </ul>
-    </div>
+        </div>
+     </div>
+
 
     <%# ここから書きます %>
     <div class = "main-map">
-    <!-- 検索機能の追加 -->
-    <input id="address" type="textbox" value="GeekSalon">
-    <input type="button" value="Encode" onclick="codeAddress()">
-    <!-- ここまで追加-->
-    <div id='map'></div>
-    <div class = "main-map">
-    <style>
-    #map {
-      height: 900px;
-      width: 900px;
-    }
-    </style>
+      <!-- ここまで追加-->
+      <div id='map'></div>
+      <div class = "main-map">
+      <style>
+      #map {
+        height: 900px;
+        width: 900px;
+      }
+      </style>
+        <!-- 検索機能の追加 -->
+
 
     <script>
     let map
@@ -69,10 +65,17 @@
         }
       });   
     }
+    
     // ここまで追加 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4sHRV0I9mbiVq5KVr4Kof38euJ_g29ns&callback=initMap" async defer></script>
 
-</div>
 </div>  
+  <div class="detail-and-map">
+      <ul class = "tweet-detail">
 
+      <div class="search-map">
+        <input id="address" type="textbox" value="GeekSalon">
+        <input type="button" value="検索" onclick="codeAddress()">
+      </div>
+  </div>
