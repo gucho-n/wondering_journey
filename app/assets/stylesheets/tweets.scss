@@ -160,18 +160,31 @@ height: 10vh;
 
 
 // 詳細
+.main-detail{
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  }
+p{
+  font-size: 8vh;
+}
+.tweet-title{
+ display: flex;
+ 
+  font-size: 30px;
+}
 .main-container{
   display: flex;
   justify-content: center;
 }
+
 .main-image{
-  width: 50%;
+ 
 }
 
-.tweet-title{
-  text-align: center;
-  font-size: 30px;
-}
+
 .main-map{
   width: 50%;
 }
