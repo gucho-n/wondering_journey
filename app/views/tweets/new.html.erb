@@ -1,4 +1,7 @@
-<p>投稿</p>
+
+
+  <div class = "post-form"> 
+  <p class = "lets-post">投稿しましょう↓↓</p>
   <%= form_with model:@tweet, local: true do |f| %>
   <%# <%= render 'shared/error_messages', model: f.object %> 
         <p>撮影地</p>
@@ -15,6 +18,7 @@
         <p>投稿する</p>
           <%= f.submit "投稿する" ,class:"tweet-text" %>
           <%=link_to 'もどる', root_path, class:"tweet-text" %>
+  </div>
 
 
 <%end%>
