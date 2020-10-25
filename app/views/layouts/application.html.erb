@@ -38,10 +38,14 @@
     </header>
     <div class = "body">
       <aside>
-     
-      <ul>
-      <li> </li>
+      <ul class = "sidebar-title">
+      <li class = "sidebar-title-shortcut">ショートカット </li>
       </ul>
+
+      <ul><% @tweets.each do |tweet| %>
+       <li>tweet.title</li> 
+      <% end %>
+       </ul>
       
       
       </aside>

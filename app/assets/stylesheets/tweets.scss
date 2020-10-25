@@ -44,7 +44,17 @@ aside{
   width: 15vw;
   height: 1000vh;
   background-color: gainsboro;
-  
+  position: fixed;z-index:10;
+  padding-top: 8%;
+}
+.sidebar-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.sidebar-title-shortcut{
+  font-size: 30px;
 }
 main{
   width: 80vw;
@@ -60,6 +70,7 @@ footer{
   width: 100vw;
   height: 5vh;
   bottom: 0; /*下に固定*/
+  position: fixed;z-index:20;
 
 }
 // .footer-image{
@@ -81,6 +92,7 @@ height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 15%;
 }
 .search-form{
   height: 5vh;
@@ -101,6 +113,8 @@ height: 10vh;
 .tweets-container{
  display: flex;
  padding: 1%;
+ margin-left: 15%;
+ 
 }
 .tweet-image{
   width: 70vw;
@@ -169,13 +183,15 @@ p{
 }
 .tweet-title{
  display: flex;
- 
-  font-size: 30px;
+ padding-left: 20%;
+ font-size: 30px;
 }
 .main-container{
   display: flex;
   justify-content: center;
   margin: 1%;
+  padding-left: 20%;
+
 }
 
 
