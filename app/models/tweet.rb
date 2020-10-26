@@ -11,4 +11,16 @@ def self.search(search)
     Tweet.all
   end
 end
+
+# 詳細検索
+def self.search(search)
+  if search != ""
+    Tweet.where('name LIKE(?)', "%#{search}%")
+  else
+    Tweet.all
+  end
+end
+
+
+
 end
