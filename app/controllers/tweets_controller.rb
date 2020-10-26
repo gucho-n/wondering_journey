@@ -28,6 +28,7 @@ class TweetsController < ApplicationController
   
   def search
     @tweets = Tweet.search(params[:keyword])
+    render "searches/search"
   end
 
 
