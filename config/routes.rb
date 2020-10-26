@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   
   resources :searches do
     collection do
-      get 'search'
+      get 'detailSearch'
     end
   end
 

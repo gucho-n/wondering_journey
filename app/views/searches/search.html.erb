@@ -1,5 +1,5 @@
-<div class="contents row">
+<div class="results-search">
   <% @tweets.each do |tweet| %>
-    <%= render partial: "tweet", locals: { tweet: tweet } %>
-  <% end %>
+    <% render partial: "tweets/index", locals: { tweet: tweet } %>
+  <% end %> 
 </div>

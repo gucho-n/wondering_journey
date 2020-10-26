@@ -2,7 +2,7 @@
 <div class="detail-search">
 <div class="detail-search-top">詳細検索</div>
 
-<%= form_with(url: search_searches_path, local: true, method: :get, class: "search-detail-form") do |form| %>
+<%= form_with(url: detailSearch_searches_path, local: true, method: :get, class: "search-detail-form") do |form| %>
   
   <%= form.text_field :name, placeholder: "名前で検索", class: "detail-search-input" %>
   <%= form.text_field :address, placeholder: "住所で検索する", class: "detail-search-input" %>
