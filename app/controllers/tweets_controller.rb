@@ -3,7 +3,6 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all
   
     @comment = Comment.new
-    @text = Comment.all
   end
 
   def show
@@ -20,15 +19,19 @@ class TweetsController < ApplicationController
 
   def create
    @tweet = Tweet.create(tweet_params)
+  
   end
   
   def tweet_params
     params.require(:tweet).permit(:name, :address, :image, :recommend, :cost).merge(user_id: current_user.id)
   end
+  
   def search
     @tweets = Tweet.search(params[:keyword])
- 
+    render "searches/search"
   end
+
+
   
 
 end

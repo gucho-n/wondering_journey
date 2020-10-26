@@ -1,78 +1,82 @@
-<main>
-<div class = "tweet">
-  <ul class = "tweet-title">
-    <li>名称<%= @tweet.name %></li>
-  </ul>
-    <div class = "tweets-pic">
-      <%= link_to image_tag(@tweet.image), tweet_path(@tweet.id), class: 'message-image' if @tweet.image.attached? %>
-    </div>
-  <ul class = "tweet-detail">
-    <li>かかった費用<%= @tweet.cost %></li>
-    <li>所在地<%= @tweet.address %></li>
-    <li>備考<%= @tweet.recommend %></li>
-    <li>あなたの家からおよそ何分でいけます<%= @tweet.recommend %></li>
-  </ul>
+  <div class = "main-detail">
+    <p>詳細</p>
+  </div>
+  <div class = "tweet-title"><p>名称:<%= @tweet.name %></p></div>
+<div class = "main-container">
+    <div class = "main-image">
+       <div class = "tweets-pic">
+          <%= link_to image_tag(@tweet.image.variant(resize: '900x900')), tweet_path(@tweet.id), class: 'message-image' if @tweet.image.attached? %>
+       <ul> 
+        <li>かかった費用<%= @tweet.cost %></li>
+        <li>所在地<%= @tweet.address %></li>
+        <li>備考<%= @tweet.recommend %></li>
+        <li>あなたの家からおよそ何分でいけます<%= @tweet.recommend %></li>
+      </ul>
+        </div>
+     </div>
+
+
     <%# ここから書きます %>
-    <h2>gmap</h2>
-<!-- 検索機能の追加 -->
-<input id="address" type="textbox" value="GeekSalon">
-<input type="button" value="Encode" onclick="codeAddress()">
-<!-- ここまで追加-->
-<div id='map'></div>
+    <div class = "main-map">
+      <!-- ここまで追加-->
+      <div id='map'></div>
+      <div class = "main-map">
+      <style>
+      #map {
+        height: 900px;
+        width: 900px;
+      }
+      </style>
+        <!-- 検索機能の追加 -->
 
-<style>
-#map {
-  height: 600px;
-  width: 600px;
-}
-</style>
 
-<script>
-let map
+    <script>
+    let map
 
-function initMap(){
-  geocoder = new google.maps.Geocoder()
+    function initMap(){
+      geocoder = new google.maps.Geocoder()
 
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 40.7828, lng:-73.9653},
-    zoom: 12,
-  });
-
-  marker = new google.maps.Marker({
-    position:  {lat: 40.7828, lng:-73.9653},
-    map: map
-  });
-}
-// GooGlemapここから追加 
-let geocoder
-
-function codeAddress(){
-  let inputAddress = document.getElementById('address').value;
-
-  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-    if (status == 'OK') {
-      map.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 40.7828, lng:-73.9653},
+        zoom: 12,
       });
-    
-    } else {
-      alert('該当する結果がありませんでした：' + status);
+
+      marker = new google.maps.Marker({
+        position:  {lat: 40.7828, lng:-73.9653},
+        map: map
+      });
     }
-  });   
-}
-// ここまで追加 
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4sHRV0I9mbiVq5KVr4Kof38euJ_g29ns&callback=initMap" async defer></script>
+    // GooGlemapここから追加 
+    let geocoder
 
-  <%# Googlemap %>
-  <%# 1,Google Maps JavaScript APIを読み込む際に、パラメーターのkeyの値としてAPIキーを指定すればOKです。 %>
-  <%# <script src="http://maps.google.com/maps/api/js?key={AIzaSyC4sHRV0I9mbiVq5KVr4Kof38euJ_g29ns}&language=ja"></script> %>
+    function codeAddress(){
+      let inputAddress = document.getElementById('address').value;
 
-
-
+      geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+        if (status == 'OK') {
+          map.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+          });
+        
+        } else {
+          alert('該当する結果がありませんでした：' + status);
+        }
+      });   
+    }
     
- 
+    // ここまで追加 
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4sHRV0I9mbiVq5KVr4Kof38euJ_g29ns&callback=initMap" async defer></script>
+
 </div>  
-</main>
+  <div class="detail-and-map">
+      <ul class = "tweet-detail">
+
+      <div class="search-map">
+        <input id="address" type="textbox" value="GeekSalon">
+        <input type="button" value="検索" onclick="codeAddress()">
+      </div>
+  </div>
+<div id = "aaa">あああ</div>

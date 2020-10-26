@@ -1,8 +1,11 @@
-<p>投稿</p>
+
+
+  <div class = "post-form"> 
+  <p class = "lets-post">投稿しましょう↓↓</p>
   <%= form_with model:@tweet, local: true do |f| %>
   <%# <%= render 'shared/error_messages', model: f.object %> 
-        <p>ニックネーム</p>
-          <%= f.text_field :name, class:"tweet-text", id:"tweet-nickname", placeholder:"ニックネーム（必須 10文字まで)", maxlength:"10" %>
+        <p>撮影地</p>
+          <%= f.text_field :name, class:"tweet-text", id:"tweet-nickname", placeholder:"撮影地", maxlength:"10" %>
         <p>住所</p>
           <%= f.text_field :address, class:"tweet-text", id:"tweet-address", placeholder:"投稿先の住所", maxlength:"40" %>
 
@@ -15,6 +18,7 @@
         <p>投稿する</p>
           <%= f.submit "投稿する" ,class:"tweet-text" %>
           <%=link_to 'もどる', root_path, class:"tweet-text" %>
+  </div>
 
 
 <%end%>
