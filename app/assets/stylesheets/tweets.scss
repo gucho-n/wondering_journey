@@ -163,28 +163,22 @@ aside{
 
 
 // 詳細
-.main-detail{
 
-  width: 100%;
-  display: flex;
-  flex-direction:column;
-  
-  
-  }
-p{
-  font-size: 8vh;
-}
+
 .tweet-title{
- display: flex;
- padding-left: 20%;
- font-size: 30px;
+ font-size: 2.4cm;
 }
 .main-container{
   display: flex;
   justify-content: center;
   margin: 1%;
- 
+  justify-content: space-evenly;
 
+}
+.main-image{
+  background-color: beige;
+  display: flex;
+  align-items: center;
 }
 
 .post-form{
@@ -194,7 +188,7 @@ p{
 
 
 .main-map{
-  width: 50%;
+  
 }
 
  .map{

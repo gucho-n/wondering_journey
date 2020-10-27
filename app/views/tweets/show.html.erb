@@ -1,19 +1,13 @@
-  <div class = "main-detail">
-   
-  </div>
-  <div class = "tweet-title"><p>名称:<%= @tweet.name %></p></div>
+<p class= "tweet-title">名称:<%= @tweet.name %></p>
 <div class = "main-container">
     <div class = "main-image">
        <div class = "tweets-pic">
           <%= link_to image_tag(@tweet.image.variant(resize: '900x900')), tweet_path(@tweet.id), class: 'message-image' if @tweet.image.attached? %>
-       <ul> 
-        <li>かかった費用<%= @tweet.cost %></li>
-        <li>所在地<%= @tweet.address %></li>
-        <li>備考<%= @tweet.recommend %></li>
-        <li>あなたの家からおよそ何分でいけます<%= @tweet.recommend %></li>
-      </ul>
+     
         </div>
      </div>
+
+ 
 
 
     <%# ここから書きます %>
@@ -72,7 +66,7 @@
 
 </div>  
   <div class="detail-and-map">
-      <ul class = "tweet-detail">
+      
 
       <div class="search-map">
         <input id="address" type="textbox" value="GeekSalon">
@@ -80,3 +74,10 @@
       </div>
   </div>
 <div id = "aaa">あああ</div>
+
+      <ul> 
+        <li>かかった費用<%= @tweet.cost %></li>
+        <li>所在地<%= @tweet.address %></li>
+        <li>備考<%= @tweet.recommend %></li>
+        <li>あなたの家からおよそ何分でいけます<%= @tweet.recommend %></li>
+      </ul>
