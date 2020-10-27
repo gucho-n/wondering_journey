@@ -14,7 +14,7 @@ def self.search(search)
 end
 
 # 詳細検索
-def self.detailSarch(search)
+def self.detailSearch(search)
   if search != ""
     Tweet.where('name LIKE(?)', "%#{search}%" )
     redirect_to root_path
