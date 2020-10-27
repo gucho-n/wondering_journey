@@ -2,33 +2,31 @@
   <aside> 
   </aside>
 
- <div class = "main-side-index">
+  <div class = "main-side-index">
+      <div class = "search-top">
+        <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "撮影地で検索する", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+        <% end %>
+      </div>
 
-<div class = "search-top">
-<%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "撮影地で検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-</div>
- 
-    <% @tweets.each do |tweet| %> 
-     <div class = "tweets-container">
+
+    
+    <div class = "tweets-container">
+      <% @tweets.each do |tweet| %> 
         <div class= "tweet-image">
           <ul class = "tweet-title"> 
             <li class = "post-place">撮影地  <%=tweet.name %></li>
             <li class = "post-name">投稿者  <%=tweet.user.nickname %></li>
-            <%# <%= render partial: "tweet", locals: { tweet: tweet } %>
           </ul>
-          <div class = "tweets-pic">
-            <%= link_to image_tag(tweet.image.variant(resize: '1200x1200')), tweet_path(tweet.id), class: 'message-image' if tweet.image.attached? %>
-          </div>
-        </div>
-
-            
+        <div class = "tweets-pic">
+          <%= link_to image_tag(tweet.image.variant(resize: '1200x1200')), tweet_path(tweet.id), class: 'message-image' if tweet.image.attached? %>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
+            
   </div>
 
-  </div>
+</div>
 
