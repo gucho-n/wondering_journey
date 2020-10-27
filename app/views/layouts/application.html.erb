@@ -20,32 +20,41 @@
       <%= image_tag 'header.jpg' ,class: 'header-image' %> 
       <div class="header-btn">
         <ul class = "header-left">
-          <li><%= link_to "TOP", "/" ,class: "edit-link"%></li>
-          <li><%= link_to "投稿",new_tweet_path,class:"edit-link"%></li>
-          <li><%= link_to "詳細検索", searches_path,class:"edit-link" %></li>
-          <li><%= link_to "ありがとう", "/",class:"edit-link" %></li>
+          <div class= btn-container>
+          <li><%= link_to "TOP", "/" ,class: "link-btn"%></li>
+          </div>
+           <div class= btn-container>
+          <li><%= link_to "投稿",new_tweet_path,class:"link-btn"%></li>
+           </div>
+           <div class= btn-container>
+          <li><%= link_to "詳細検索", searches_path,class:"link-btn" %></li>
+          </div>
+           <div class= btn-container>
+          <li><%= link_to "ありがとう", "/",class:"link-btn" %></li>
+          </div>
         </ul>
           <ul class = "header-right">
       
           <% unless user_signed_in? %>
-          <li><%= link_to "新規登録", new_user_registration_path,class:"edit-link" %></li>       
-           <li><%= link_to "ログイン", new_user_session_path,class:"edit-link" %></li>
+          <div class= btn-container>
+          <li><%= link_to "新規登録", new_user_registration_path,class:"link-btn" %></li>
+           </div> 
+           <div class= btn-container>      
+           <li><%= link_to "ログイン", new_user_session_path,class:"link-btn" %></li>
+           </div> 
           <% else %>
-          <li><%= link_to "ユーザー編集", edit_user_registration_path,class:"edit-link" %></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"edit-link" %></li>
+          <div class= btn-container>  
+          <li><%= link_to "ユーザー編集", edit_user_registration_path,class:"link-btn" %></li>
+           </div> 
+           <div class= btn-container>    
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"link-btn" %></li>
+           </div> 
           <% end %>
         </ul>
       </div> 
     </header>
     <div class = "body">
-      <aside>
-      <ul class = "sidebar-title">
-      <li class = "sidebar-title-shortcut">ショートカット </li>
-      </ul>
 
-      
-      
-      </aside>
       <main>
         <%= yield %> 
       </main>

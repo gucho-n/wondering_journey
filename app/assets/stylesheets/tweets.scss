@@ -1,65 +1,63 @@
 // Place all the styles related to the tweets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html{
+  font-size: 62.5%;
+}
 header{
   position: fixed;z-index:100;//z-index:10;を追加
   text-align:center;
 }
 .header-image{
   width: 100vw;
-  height: 15vh;
+  height: 13vh;
   vertical-align:top;
 }
 .header-btn{
  
-  height: 8vh;
+  height: 5vh;
   background-color: black;
   display: flex;
-  justify-content: space-between;
+  
+ 
 }
 .header-left{
-
-  font-size: 30px;
+  width: 50%;
+  font-size: 3rem;
   display: flex;
   list-style: none;
-}
-.edit-link{
+  justify-content: space-around;
   
+}
+.btn-container{
+  width: 25%;
+}
+
+.link-btn{
+
   color: aliceblue;
-  margin-left: 100px;
+
+ 
 }
 
 
 .header-right{
-  font-size: 30px;
+  width: 50%;
+  font-size: 3rem;
   display: flex;
   list-style: none;
+  justify-content: flex-end;
 }
 
 .body{
   display: flex;
 }
 
-aside{
-  width: 15vw;
-  height: 1000vh;
-  background-color: gainsboro;
-  position: fixed;z-index:10;
-  padding-top: 8%;
-}
-.sidebar-title{
-
-  padding: 10% 10%;
-  text-align: center;
 
 
-}
-.sidebar-title-shortcut{
-  font-size: 30px;
-}
 main{
-  width: 80vw;
-  padding-top: 25vh;
+  padding-top: 10%;
+  width: 100%;
   flex: 1;
 }
 
@@ -80,36 +78,42 @@ footer{
 //   vertical-align:top;//加える
 // }
 //indexから
-
-
-.right-title{
-display: flex;
-height: 10vh;
+.index-container{
+height: 100%;
 }
+aside{
+  width: 15%;
+  height: 1000vh;
+  background-color: gainsboro;
+  position: fixed;z-index:10;
+ 
+
+}
+.main-side-index{
+  padding-left: 15%;
+  height: 100%;
+
+}
+
 .search-top{
-  text-align: center;
-  width: 70vw;
-  font-size: 5vh;
+  height: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 15%;
+
 }
 .search-form{
-  height: 5vh;
-  height: 10vh;
+
+  font-size: 2.0em;
+  
 }
 .search-input{
   width: 20vw;
-  font-size: 5vh;
+  height: ５％;
+  font-size: 2.0em;
 }
-.comment-title-container{
-  width: 30vw;
 
-}
-.comment-title{
- font-size: 5%;;
-}
+
 
 .tweets-container{
  display: flex;
