@@ -1,4 +1,4 @@
-<p class= "tweet-title">名称:<%= @tweet.name %></p>
+<h2 class= "tweet-title">名称:<%= @tweet.name %></h2>
 <div class = "main-container">
     <div class = "main-image">
        <div class = "tweets-pic">
@@ -73,11 +73,16 @@
         <input type="button" value="検索" onclick="codeAddress()">
       </div>
   </div>
-<div id = "aaa">あああ</div>
+</div>
+</div>
+<div class = "sub-container">
+<h2 class ="pic-detail">撮影先の情報</h2>
 
-      <ul> 
-        <li>かかった費用<%= @tweet.cost %></li>
+      <ul class = "infomation-list">  
         <li>所在地<%= @tweet.address %></li>
         <li>備考<%= @tweet.recommend %></li>
         <li>あなたの家からおよそ何分でいけます<%= @tweet.recommend %></li>
       </ul>
+</div>
+
+
