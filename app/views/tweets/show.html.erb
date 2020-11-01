@@ -85,12 +85,15 @@
       </ul>
 </div>
 
-
+<% @comments.each do |comment| %> 
 <div class = "comments-container">
   <h2 class ="pic-detail">コメント欄</h2>
+    
     <ul class = "infomation-list">  
-      <li>所在地<%= @tweet.address %></li>
+      <li><%= comment.text %></li>
+      <li><%= comment.name %></li>
     </ul>
 </div>
+  <%end%>
 
 
