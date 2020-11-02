@@ -84,15 +84,17 @@
         <li>あなたの家からおよそ何分でいけます<%= @tweet.recommend %></li>
       </ul>
 </div>
-
-<% @comments.each do |comment| %> 
+<h2 class ="pic-detail">コメント欄</h2>
 <div class = "comments-container">
-  <h2 class ="pic-detail">コメント欄</h2>
-    
-    <ul class = "infomation-list">  
+<% @comments.each do |comment| %>   
+    <ul class = "balloon">  
       <li><%= comment.text %></li>
-      <li><%= comment.name %></li>
+      <li><%= comment.user.nickname %></li>
     </ul>
+    <div class="balloon">
+ 
+  <br>
+</div>
 </div>
   <%end%>
 
