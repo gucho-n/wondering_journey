@@ -1,0 +1,46 @@
+
+    
+    
+    
+    
+    
+  <header class = "top-logo-class" >
+      <div class="header-top">
+      <%= image_tag 'header.jpg' ,class: 'header-image' %> 
+        <p class="WonderingJourney">WonderingJourney</p>
+      <div class="nav">
+        <ul class = "header-left">
+          <div class= btn-container>
+          <li><%= link_to "TOP", "/" ,class: "link-btn"%></li>
+          </div>
+           <div class= btn-container>
+          <li><%= link_to "投稿",new_tweet_path,class:"link-btn"%></li>
+           </div>
+           <div class= btn-container>
+          <li><%= link_to "詳細検索", searches_path,class:"link-btn" %></li>
+          </div>
+           <div class= btn-container>
+          <li><%= link_to "ありがとう", "/",class:"link-btn" %></li>
+          </div>
+        </ul>
+          <ul class = "header-right">
+      
+          <% unless user_signed_in? %>
+          <div class= btn-container>
+          <li><%= link_to "新規登録", new_user_registration_path,class:"link-btn" %></li>
+           </div> 
+           <div class= btn-container>      
+           <li><%= link_to "ログイン", new_user_session_path,class:"link-btn" %></li>
+           </div> 
+          <% else %>
+          <div class= btn-container>  
+          <li><%= link_to "ユーザー編集", edit_user_registration_path,class:"link-btn" %></li>
+           </div> 
+           <div class= btn-container>    
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"link-btn" %></li>
+           </div> 
+          <% end %>
+        </ul>
+      </div> 
+    
+    </header>
