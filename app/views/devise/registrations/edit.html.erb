@@ -1,43 +1,46 @@
 <%= render "shared/header" %>
-<div class="device-container">
-<%= form_with model: @user, url: user_registration_path,id:"nanka",class: "new_user",local: true do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+
+<%= form_with model: @user, url: user_registration_path,id:"nanka",class: "devise-registration-main",local: true do |f| %>
+  <div class = "devise-form-wrap">
+    <div class = "devise-form-header">
+      <h2 class = "new-registration">登録情報変更</h2>
+        <%= render "devise/shared/error_messages", resource: resource %>
    <%# ニックネーム %>
-   <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_area :nickname, autocomplete: "new-password" %>
+   <div class="field-group">
+    <%= f.label :nickname ,class: "devise-label" %><br/>
+    <%= f.text_field :nickname, autocomplete: "new-password" ,class: "devise-form-in" %>
   </div>
   <%# Email %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field-group">
+    <%= f.label :email ,class: "devise-label" %><br/>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: "devise-form-in" %>
   </div>
   <%# パスワード %>
-  <div class="field">
-    <%= f.label :password %>
+  <div class="field-group">
+    <%= f.label :password ,class: "devise-label" %><br/>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password" ,class: "devise-label" %><br/>
   </div>
  <%# パスワード確認 %>
-  <div class="field">
+  <div class="field-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class: "devise-label" %><br/>
   </div>
   <%# 苗字 %>
   
-  <div class="field">
+  <div class="field-group">
     <%= f.label :age %><br />
-    <%= f.text_area :age, autocomplete: "new-password" %>
+    <%= f.text_field :age, autocomplete: "new-password" ,class: "devise-label" %><br/>
   </div>
-  <div class="field">
+  <div class="field-group">
     <%= f.label :gender %><br />
-    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"})  %>
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"devise-label", id:"item-sales-status"})  %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="sign-up-label">
+    <%= f.submit "Edit" ,class:"devise-label" %>
   </div>
 <% end %>
 
