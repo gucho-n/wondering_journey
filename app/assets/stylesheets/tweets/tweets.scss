@@ -1,0 +1,160 @@
+
+//indexから
+.index-container{
+height: 100%;
+width: 100%;
+display: flex;
+}
+aside{
+  width: 100% - 85%;
+  height: 1000vh;
+  background-color: gainsboro;
+  position: fixed;z-index:10;
+}
+.main-side-index{
+
+  height: 100%;
+  padding-left:100% - 85%;
+  width: 100%;
+}
+
+.search-top{
+  width: 100% - 15%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: aquamarine;
+  
+}
+.search-form{
+
+  font-size: 2.0em;
+  
+}
+.search-input{
+  width: 20vw;
+  height: ５％;
+  font-size: 2.0em;
+}
+
+
+.tweets-container{
+ 
+
+ padding-top: 10%;
+ margin-left: 15%; 
+}
+.tweet-image{
+
+  width: 50%;
+  height: 50%;
+  padding: 1%;
+}
+.tweet-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+// .post-image{
+//   width: 100%;
+//   height: 100%;
+// }
+.post-place{
+  font-size: 40px;
+}
+.post-name{
+  font-size: 40px;
+}
+
+.get-comment{
+  display: flex;
+  justify-content: space-between;
+}
+.sub-container{
+  width: 100%;
+}
+
+// .fuki{
+//  position: relative;
+// }
+// .incomment{
+//   position: absolute;
+// }
+
+
+// 詳細
+
+
+.tweet-title{
+ font-size: 2.4cm;
+}
+.main-container{
+  display: flex;
+ 
+  margin: 1%;
+  justify-content: space-evenly;
+  height: auto;
+  
+
+}
+.main-image{
+  background-color: beige;
+  display: flex;
+  align-items: center;
+}
+
+.post-form{
+  padding-top: 5%;
+  padding-left: 15%;
+}
+
+
+.main-map{
+  
+}
+
+ .map{
+    width: 100px;
+    height: 100px;
+}
+.detail-and-map{
+  display: flex;
+
+}
+.sub-container{
+ 
+  height: 2000px;
+
+}
+.pic-detail{
+
+  font-size: 1.6cm;
+}
+.infomation-list{
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  text-align: center;
+  font-size: 1.0cm;
+  background-color: orange;
+}
+
+//投稿用
+.background-image{
+  background-color: brown;
+}
+
+.post-form{
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.comment-form{
+  width: 50%;
+}
+
+

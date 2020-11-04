@@ -2,12 +2,13 @@ class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all
   
-    @comment = Comment.new
+   
   end
 
   def show
    @tweet = Tweet.find(params[:id])
   #  ここではurlにあるパラムスを取得することによって指定したカラムを手にすることができます
+   @comments = Comment.all
   end
   
 

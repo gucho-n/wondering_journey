@@ -6,8 +6,7 @@ class CommentsController < ApplicationController
 
   def create 
     if @comment = Comment.create(comment_params)
-      @text = @comment
-     redirect_to root_path
+      redirect_to tweet_path(params[:id])
   end
 end
   

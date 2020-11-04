@@ -1,82 +1,78 @@
-  <div class = "main-detail">
-    <p>詳細</p>
-  </div>
-  <div class = "tweet-title"><p>名称:<%= @tweet.name %></p></div>
-<div class = "main-container">
-    <div class = "main-image">
-       <div class = "tweets-pic">
+<h2 class= "tweet-title">名称:<%= @tweet.name %></h2>
+  <div class = "main-container">
+      <div class = "main-image">
+        <div class = "tweets-pic">
           <%= link_to image_tag(@tweet.image.variant(resize: '900x900')), tweet_path(@tweet.id), class: 'message-image' if @tweet.image.attached? %>
-       <ul> 
-        <li>かかった費用<%= @tweet.cost %></li>
+        </div>
+     </div>
+      <!-- ここまで追加-->
+      <div id='map'></div>
+        <div class = "main-map">
+          <style>
+          #map {
+            height: 900px;
+            width: 900px;
+          }
+          </style>
+            <!-- 検索機能の追加 -->
+            <script>
+              let map
+                function initMap(){
+                  geocoder = new google.maps.Geocoder()
+                  map = new google.maps.Map(document.getElementById('map'), {
+                  center: {lat: 40.7828, lng:-73.9653},
+                  zoom: 12,
+                  });
+                  marker = new google.maps.Marker({
+                  position:  {lat: 40.7828, lng:-73.9653},
+                  map: map
+                  });
+                  }
+                // GooGlemapここから追加 
+              let geocoder
+                function codeAddress(){
+                let inputAddress = document.getElementById('address').value;
+
+                    geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+                if (status == 'OK') {
+                  map.setCenter(results[0].geometry.location);
+              var marker = new google.maps.Marker({
+                  map: map,
+                  position: results[0].geometry.location
+              });
+            
+              } else {
+                alert('該当する結果がありませんでした：' + status);
+              }
+              });   
+              }
+            // ここまで追加 
+          </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4sHRV0I9mbiVq5KVr4Kof38euJ_g29ns&callback=initMap" async defer></script>
+        </div>  
+    <div class="detail-and-map">
+        <div class="search-map">
+          <input id="address" type="textbox" value="GeekSalon">
+          <input type="button" value="検索" onclick="codeAddress()">
+        </div>
+  </div>
+  </div>
+  </div>
+  <div class = "sub-container">
+   <h2 class ="pic-detail">撮影先の情報
+      <ul class = "infomation-list">  
         <li>所在地<%= @tweet.address %></li>
         <li>備考<%= @tweet.recommend %></li>
         <li>あなたの家からおよそ何分でいけます<%= @tweet.recommend %></li>
       </ul>
-        </div>
-     </div>
+   </h2>
+  <h2 class ="pic-detail">コメント欄</h2>
+ 
 
 
-    <%# ここから書きます %>
-    <div class = "main-map">
-      <!-- ここまで追加-->
-      <div id='map'></div>
-      <div class = "main-map">
-      <style>
-      #map {
-        height: 900px;
-        width: 900px;
-      }
-      </style>
-        <!-- 検索機能の追加 -->
-
-
-    <script>
-    let map
-
-    function initMap(){
-      geocoder = new google.maps.Geocoder()
-
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 40.7828, lng:-73.9653},
-        zoom: 12,
-      });
-
-      marker = new google.maps.Marker({
-        position:  {lat: 40.7828, lng:-73.9653},
-        map: map
-      });
-    }
-    // GooGlemapここから追加 
-    let geocoder
-
-    function codeAddress(){
-      let inputAddress = document.getElementById('address').value;
-
-      geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-        if (status == 'OK') {
-          map.setCenter(results[0].geometry.location);
-          var marker = new google.maps.Marker({
-              map: map,
-              position: results[0].geometry.location
-          });
-        
-        } else {
-          alert('該当する結果がありませんでした：' + status);
-        }
-      });   
-    }
-    
-    // ここまで追加 
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4sHRV0I9mbiVq5KVr4Kof38euJ_g29ns&callback=initMap" async defer></script>
-
-</div>  
-  <div class="detail-and-map">
-      <ul class = "tweet-detail">
-
-      <div class="search-map">
-        <input id="address" type="textbox" value="GeekSalon">
-        <input type="button" value="検索" onclick="codeAddress()">
-      </div>
   </div>
-<div id = "aaa">あああ</div>
+</div>
+</div>
+
+
+
