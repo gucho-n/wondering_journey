@@ -1,27 +1,40 @@
 
+<%= render "shared/header" %>
+     <%= form_with model:@tweet, class:"registration-main", local: true do |f| %>
+        <div class = "form-wrap">
+          <div class = "form-header">
+            <h1 class = "form-header-text">投稿する</h1>
+          </div>
+          
+          <div class = "form-group">
+            <p class= post-title>撮影地</p>
+            <%= f.text_field :name, class:"tweet-text", id:"tweet-nickname", placeholder:"撮影地", maxlength:"10" %>
+          </div>
+          
+          <div class = "form-group">
+          <p class= post-title>住所</p>
+            <%= f.text_field :address, class:"tweet-text", id:"tweet-address", placeholder:"投稿先の住所", maxlength:"40" %>
+          </div>
+          <div class = "form-group">
+            <p class= post-title>画像投稿</p>
+            <%= f.file_field :image,class:"tweet-text", id:"tweet-image" %>
+          </div>
+          <div class = "form-group">
+            <p class= post-title>詳細</p>
+            <%= f.text_area :recommend, class:"tweet-text", id:"tweet-recommend", placeholder:"旅行先の詳細（必須 100文字まで)", maxlength:"100" %>
+          </div>
 
-  <div class = "background-image">
-    <%# <%= image_tag 'sunset.jpg' ,class: 'post-image' %>  
-    <div class = "post-form"> 
-      <p class = "lets-post">投稿しましょう↓↓</p>
-     <%= form_with model:@tweet, local: true do |f| %>
-  <%# <%= render 'shared/error_messages', model: f.object %> 
-        <p>撮影地</p>
-          <%= f.text_field :name, class:"tweet-text", id:"tweet-nickname", placeholder:"撮影地", maxlength:"10" %>
-        <p>住所</p>
-          <%= f.text_field :address, class:"tweet-text", id:"tweet-address", placeholder:"投稿先の住所", maxlength:"40" %>
+          <div class = "form-group">
+            <p class= post-title>費用</p>
+            <%= f.text_field :cost, class:"tweet-text", id:"tweet-cost", placeholder:"旅行でかかった費用", maxlength:"10" %>
+          </div>
 
-        <p>画像投稿</p>
-        <%= f.file_field :image, id:"tweet-image" %>
-        <p>詳細</p>
-        <%= f.text_area :recommend, class:"tweet-text", id:"tweet-recommend", placeholder:"旅行先の詳細（必須 100文字まで)", maxlength:"100" %>
-        <p>費用</p>
-        <%= f.text_field :cost, class:"tweet-text", id:"tweet-cost", placeholder:"旅行でかかった費用", maxlength:"10" %>
-        <p>投稿する</p>
-          <%= f.submit "投稿する" ,class:"tweet-text" %>
-  あ
-          <%=link_to 'もどる', root_path, class:"tweet-text" %>
+          <div class = "form-group">
+     
+          </div>
+          <div class = "login-btn">
+            <%= f.submit "投稿する" ,class:"tweet-btn" %>
+            <%# <%=link_to 'もどる', root_path, class:"back-btn" %> 
+          </div>
           <%end%>
-  </div>
-
- </div>
+        </div>

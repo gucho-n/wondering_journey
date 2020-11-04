@@ -1,89 +1,88 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
 
-//indexから
-.index-container{
-height: 100%;
-width: 100%;
-display: flex;
-}
-aside{
-  width: 100% - 85%;
-  height: 1000vh;
-  background-color: gainsboro;
-  position: fixed;z-index:10;
-}
-.main-side-index{
-
-  height: 100%;
-  padding-left:100% - 85%;
+header{
+  position: fixed;z-index:100;//z-index:10;を追加
+  text-align:center;
   width: 100%;
 }
-
-.search-top{
-  width: 100% - 15%;
-  height: 15%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  background-color: aquamarine;
-  
+.header-image{
+  width: 100%;
+  height: 13vh;
+  vertical-align:top;
+  position: relative;
 }
-.search-form{
+.WonderingJourney { 
+  position: absolute;
+  font-size: 6em;
+  font-family: Monotype Corsiva, fantasy;
+  color: aliceblue;
+  right: 0;
+  bottom: 30%;
 
-  font-size: 2.0em;
-  
 }
-.search-input{
-  width: 20vw;
-  height: ５％;
-  font-size: 2.0em;
-}
-
-
-.tweets-container{
+.header-btn{
  
-
- padding-top: 10%;
- margin-left: 15%; 
+  height: 5vh;
+  background-color: black;
+  display: flex;
+  
+ 
 }
-.tweet-image{
-
+.header-left{
   width: 50%;
-  height: 50%;
-  padding: 1%;
-}
-.tweet-title{
+  font-size: 3rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  list-style: none;
+  justify-content: space-around;
+  
+}
+.btn-container{
+  width: 25%;
+}
+
+.link-btn{
+
+  color: aliceblue;
+
  
 }
-// .post-image{
-//   width: 100%;
-//   height: 100%;
-// }
-.post-place{
-  font-size: 40px;
-}
-.post-name{
-  font-size: 40px;
-}
 
-.get-comment{
+
+.header-right{
+  width: 50%;
+  font-size: 3rem;
   display: flex;
-  justify-content: space-between;
+  list-style: none;
+  justify-content: flex-end;
 }
-.sub-container{
+
+
+
+main{
+  padding-top: 10%;
+  height: 100%;
   width: 100%;
+  flex: 1;
 }
 
-// .fuki{
-//  position: relative;
-// }
-// .incomment{
-//   position: absolute;
-// }
 
+footer{
+  // position: fixed;
+  // text-align:center;//加える
+  background-color: black;
+  width: 100vw;
+  height: 5vh;
+  bottom: 0; /*下に固定*/
+  position: fixed;z-index:20;
+
+}
+// .footer-image{
+//   width: 100vw;
+//   height: 15vh;
+//   vertical-align:top;//加える
+// }
 
 // 詳細
 
@@ -106,10 +105,7 @@ aside{
   align-items: center;
 }
 
-.post-form{
-  padding-top: 5%;
-  padding-left: 15%;
-}
+
 
 
 .main-map{
@@ -143,18 +139,6 @@ aside{
 }
 
 //投稿用
-.background-image{
-  background-color: brown;
-}
 
-.post-form{
-  background-color: blue;
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-.comment-form{
-  width: 50%;
-}
 
 
