@@ -1,0 +1,35 @@
+// Place all the styles related to the searches controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.detail-search{
+  padding-top: 3%;
+  width: 100vh;
+  height: 100vh;
+  padding-left: 15%;
+}
+.detail-search-top{
+  
+  font-size: 50px;
+  
+  }
+.search-detail-form{
+  display: flex;
+  flex-direction: column;
+}
+.detail-search-input{
+  font-size: 30px;
+  margin: 1% ;
+}
+.results-search{
+  width: 100%;
+  height: 100vh;
+  padding-left: 15%;
+  
+}
+
+.search-results-title{
+  text-align: center;
+  color: brown;
+}
