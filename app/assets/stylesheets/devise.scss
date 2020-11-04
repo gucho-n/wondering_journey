@@ -1,13 +1,44 @@
-h2{
-  text-align: center;
-}
-new_user{
+.devise-registration-main{
+
+  padding-top: 8.5%;
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
   
+
+  height:1200px;
+}
+.devise-form-header{
+    width: 100%;
+    height: 120px;
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.field-group{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.new-registration{
+  text-align: center;
+
+}
+.devise-form-wrap{
+background-color: white;
+
 }
 field{
   background-color: red; 
 }
-.device-container{
-  padding-top: 20wh; 
-  padding-left: 500px;
+.devise-form-wrap{
+  width: 50%;
 }
