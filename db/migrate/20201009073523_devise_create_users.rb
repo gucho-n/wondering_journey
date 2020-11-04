@@ -17,11 +17,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       # 追加入力
 
       t.string :nickname ,null: false, default: ""
-
-      t.string  :surname ,null: false, default: ""
-      t.string  :surname_kana, null: false, default: ""
-      t.string  :firstname, null: false, default: ""
-      t.string  :firstname_kana, null: false, default: ""
       
       t.integer :gender_id 
       t.integer :age 
