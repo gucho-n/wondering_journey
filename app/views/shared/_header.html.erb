@@ -6,19 +6,19 @@
       <div class="nav">
         <ul class = "header-left">
           <div class= btn-container>
-          <li><%= link_to "TOP", "/" ,class: "link-btn"%></li>
+          <li><%= link_to "TOP", "/" ,class: "link-btn",id:"header-btn"%></li>
           </div>
           <% unless user_signed_in? %>
            <div class= btn-container>
-            <li><%= link_to "投稿",new_user_registration_path,class:"link-btn"%></li>
+            <li><%= link_to "投稿",new_user_registration_path,class:"link-btn",id:"header-btn"%></li>
            </div>
            <% else%>
              <div class= btn-container>
-            <li><%= link_to "投稿",new_tweet_path,class:"link-btn"%></li>
+            <li><%= link_to "投稿",new_tweet_path,class:"link-btn",id:"header-btn"%></li>
            </div>
               <% end%>
            <div class= btn-container>
-          <li><%= link_to "詳細検索", searches_path,class:"link-btn" %></li>
+          <li><%= link_to "詳細検索", searches_path,class:"link-btn",id:"header-btn" %></li>
           </div>
            <div class= btn-container>
           <li><%= link_to "ありがとう", "/",class:"link-btn" %></li>
