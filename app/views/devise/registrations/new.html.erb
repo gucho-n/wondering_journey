@@ -1,45 +1,49 @@
-<h2>新規登録</h2>
-
-<div class="device-container">
-<%= form_with model: @user, url: user_registration_path,id:"nanka",class: "new_user",local: true do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%= render "shared/header" %>
+<%= form_with model: @user, url: user_registration_path,id:"nanka",class: "devise-registration-main",local: true do |f| %>
+  <div class = "devise-form-wrap">
+    <div class = "devise-form-header">
+      <h2 class = "new-registration">新規登録</h2>
+    </div>
+    <%= render "devise/shared/error_messages", resource: resource %>
    <%# ニックネーム %>
-   <div class="field">
-    <%= f.label :nickname %><br/>
-    <%= f.text_area :nickname, autocomplete: "new-password" %>
-  </div>
+   <div class="field-group">
+      <%= f.label :nickname,class: "devise-label" %><br/>
+      <%= f.text_field :nickname, autocomplete: "new-password",class: "devise-form-in" %>
+    </div>
   <%# Email %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+   <div class="field-group">
+    <%= f.label :email ,class: "devise-label" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: "devise-form-in" %>
   </div>
   <%# パスワード %>
-  <div class="field">
-    <%= f.label :password %>
+  <div class="field-group">
+    <%= f.label :password ,class: "devise-label" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password" ,class: "devise-form-in" %>
   </div>
  <%# パスワード確認 %>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="field-group">
+    <%= f.label :password_confirmation ,class: "devise-label" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class: "devise-form-in" %>
   </div>
   
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.text_area :age, autocomplete: "new-password" %>
+  <div class="field-group">
+    <%= f.label :age ,class: "devise-label" %><br />
+    <%= f.text_field :age, autocomplete: "new-password" ,class: "devise-form-in" %>
   </div>
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"})  %>
+  <div class="field-group">
+    <%= f.label :gender ,class: "devise-label" %><br />
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"devise-form-in", id:"item-sales-status"})  %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="sign-up-label">
+    <%= f.submit "Sign up",class:"devise-label" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-</div>
+  <div class="log-in-here">ログインはこちら
+    <%= render "devise/shared/links" %>
+  </div>
+  <% end %>
+  </div>
+  <%= render "shared/second_footer" %>

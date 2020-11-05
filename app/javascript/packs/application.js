@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../list")
+require("../tap")
 
 // require("../list")これがjavascriptの台紙となる
 

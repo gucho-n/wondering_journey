@@ -1,0 +1,143 @@
+
+.tweet-title{
+  font-size: 2.4cm;
+ }
+ .show-container{
+
+  padding-top: 8.5%;
+  width: 100%;
+  min-width: 800px;
+  display: flex;
+  height:1300px;
+ }
+.show-image{
+  width: 70%;
+  background-color: #333333;
+}
+.show-pic{
+  padding: 5%;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+.show-detail{
+  font-size: 3em;
+  color: white;
+}
+.under-bar{
+  background-color: #888888;
+  height: 160px;
+  
+}
+.under-container{
+  display: flex;
+  padding-left: 5%;
+}
+
+
+.info-title{
+  width: 30%;
+  font-size: 2.4em;
+  color: white;
+}
+.info-list{
+  width: 70%;
+  font-size: 2.4em;
+  color: white;
+}
+//右側
+.poster-title{
+  font-size: 3em;
+  text-align: center;
+  padding-top: 10%;
+}
+.poster-container{
+  height: 150px;
+  background-color: springgreen;
+}
+.poster-comment{
+  height: 50%;
+  background-color: seashell;
+  font-size: 2.4em;
+}
+
+
+.sub-container{
+  width: 30%;
+ 
+}
+.info-container{
+  height: 50%;
+
+}
+.com-container{
+  height: 50%;
+
+
+}
+.com-title{
+  height: 10%;
+}
+.com-title-list{
+font-size: 3em;
+text-align: center;
+}
+.comment-lists{
+  font-size: 2.4em;
+}
+
+.comment-list{
+  font-size: 2.4em;
+  margin-top:auto
+}
+.comment-text-form{
+  width: 100%;
+  display: flex;
+  padding: 46px 40px 0;
+  overflow: scroll;
+  position: fixed;
+  bottom: 0%; 
+}
+.form-input{
+  font-size: 3em;
+  width: 70%;
+}
+
+ 
+
+
+ #map {
+  width: 1000px;
+  height:1000px;
+  }
+
+  //吹き出し
+  .balloon {
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 0 1.5em 15px;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    background: #e0edff;
+  }
+  
+  .balloon:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    margin-top: -15px;
+    border: 15px solid transparent;
+    border-right: 15px solid #e0edff;
+  }
+  
+  .balloon p {
+    margin: 0;
+    padding: 0;
+  }
+  
+ 
