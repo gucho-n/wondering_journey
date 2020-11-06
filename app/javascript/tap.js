@@ -1,12 +1,13 @@
+for (let i = 0; i < 6; i++){
 window.addEventListener('load',function(){
-const pullDownButton = document.getElementById("header-btn")
+const pullDownButton = document.getElementsByClassName("link-btn")
 
-pullDownButton.addEventListener('mouseover', function(){
-  pullDownButton.setAttribute("style", "background-color:#FFBEDA;")
+  pullDownButton[i].addEventListener('mouseover', function(){
+  pullDownButton[i].setAttribute("style", "background-color:#FFBEDA;")
   })
-pullDownButton.addEventListener('mouseout', function(){
-  pullDownButton.removeAttribute("style", "background-color:#FFBEDA;")
+pullDownButton[i].addEventListener('mouseout', function(){
+  pullDownButton[i].removeAttribute("style", "background-color:#FFBEDA;")
 
   })
 })
-
+}
