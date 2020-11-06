@@ -1,8 +1,12 @@
-window.addEventListener('loads',function(){
+window.addEventListener('load',function(){
 const pullDownButton = document.getElementById("header-btn")
-console.log(pullDownButton)
+
 pullDownButton.addEventListener('mouseover', function(){
-  console.log("mouseover OK")
+  pullDownButton.setAttribute("style", "background-color:#FFBEDA;")
+  })
+pullDownButton.addEventListener('mouseout', function(){
+  pullDownButton.removeAttribute("style", "background-color:#FFBEDA;")
+
   })
 })
 
