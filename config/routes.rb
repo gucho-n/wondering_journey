@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       get 'detailSearch'
     end
   end
-
+  resources :charities
   root to: 'tweets#index'
   
 

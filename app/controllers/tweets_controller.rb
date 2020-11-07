@@ -4,9 +4,9 @@ class TweetsController < ApplicationController
   end
 
   def show
-   @tweet = Tweet.find(params[:id])
+    @tweet = Tweet.find(params[:id])
   #  ここではurlにあるパラムスを取得することによって指定したカラムを手にすることができます
-   @comments = Comment.all
+    @comments = Comment.all
 
   end
 
