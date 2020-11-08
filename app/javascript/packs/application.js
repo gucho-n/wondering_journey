@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("../list")
 require("../tap")
+require("../card")
 
 // require("../list")これがjavascriptの台紙となる
 
