@@ -36,10 +36,16 @@
       </div>
       <ul class ="comment-lists">    
         <% @comments.each do |comment| %>
-        
-        <li><%=comment.text %></li>
-        
-            <% end %>
+        <% if comment.id != comment.user.id%>
+        <div class = "balloon">
+        <li class ="balloon-left"><%=comment.text %></li>
+        </div>
+        <% else %>
+        <div class = "balloon">
+        <li class ="balloon-right"><%=comment.text %></li>
+        </div>
+        <% end %>
+      <% end %>
       </ul>
     <div>
   <%# コメントインプット %>

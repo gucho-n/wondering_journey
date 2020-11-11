@@ -6,4 +6,7 @@ class CharitiesController < ApplicationController
     @tweet = Tweet.find(params[:id])
     @charity = Charity.new
   end
+  def create
+    
+  end
 end
