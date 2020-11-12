@@ -3,8 +3,9 @@ class Tweet < ApplicationRecord
   belongs_to :user
 
   has_many :comments
+  less_price = 1000
+  over_price = 1000000
   validates :name,:address,:recommend,:cost,presence: true
-
   validates :cost, numericality: { only_interger: true }
   validates :cost, numericality: { greater_than_or_equal_to: less_price.to_i }
   validates :cost, numericality: { less_than_or_equal_to: over_price.to_i }
