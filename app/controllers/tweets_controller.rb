@@ -6,8 +6,8 @@ class TweetsController < ApplicationController
   def show
     @tweet = Tweet.find(params[:id])
   #  ここではurlにあるパラムスを取得することによって指定したカラムを手にすることができます
-    @comments = Comment.all
-
+    @comments = @tweet.comments.includes(:user)
+      # @tweetコメントをリンクさせます。
   end
 
   def new

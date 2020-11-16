@@ -8,9 +8,10 @@ aside{
 .search-top{
 }
 .index-container{
+
   height: 100%;
   width: 100%;
-  padding-top: 8.5%;
+  top: 0;
   display: flex;
   }
   
@@ -45,7 +46,10 @@ aside{
   
   .tweets-container{
    padding-top: 10%;
-  
+   overflow: scroll;
+   display: flex;
+ 
+
   }
   .tweet-image{
     width: 50%;
@@ -72,6 +76,13 @@ aside{
   }
   .sub-container{
     width: 100%;
+  }
+  .hover-lists{
+    width: auto;
+    height: 200px;
+    background-color: beige;
+    font-size: 2.4em;
+    padding: 15px;
   }
   
 

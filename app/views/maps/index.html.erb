@@ -1,7 +1,8 @@
-<div id='map'></div>
-    <div class = "main-map">
+<%= render "shared/header" %>
+    <div id='map'></div>
+<div class = "main-map">
       <!-- 検索機能の追加 -->
-      <script>
+<script>
           let map
             function initMap(){
               geocoder = new google.maps.Geocoder()
@@ -31,12 +32,13 @@
               });   
               }
             // ここまで追加 
-          </script>
+</script>
           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4sHRV0I9mbiVq5KVr4Kof38euJ_g29ns&callback=initMap" async defer></script>
-        </div>  
+    
       <div class="detail-and-map">
         <div class="search-map">
           <input id="address" type="textbox" value="GeekSalon">
           <input type="button" value="検索" onclick="codeAddress()">
         </div>
       </div> 
+</div> 

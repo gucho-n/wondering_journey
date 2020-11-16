@@ -37,13 +37,16 @@
       <ul class ="comment-lists">    
         <% @comments.each do |comment| %>
         <% if comment.id != comment.user.id%>
-        <div class = "balloon">
-        <li class ="balloon-left"><%=comment.text %></li>
-        </div>
+          <div class = "balloon">
+            <li class = "ballon-left-from"><b><%=comment.user.nickname %></b></li>
+            <li class ="balloon-left"><%=comment.text %></li>
+            
+          </div>
         <% else %>
-        <div class = "balloon">
-        <li class ="balloon-right"><%=comment.text %></li>
-        </div>
+           <div class = "balloon">
+            <li class ="balloon-right"><%=comment.text %></li>
+            <li class = "ballon-right-from"><b><%=comment.user.nickname %></b></li>
+          </div>
         <% end %>
       <% end %>
       </ul>

@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 <div class="detail-search">
-<div class="detail-search-top">詳細検索</div>
+  <div class="detail-search-top">詳細検索</div>
 
 <%= form_with(url: detailSearch_searches_path, local: true, method: :get, class: "search-detail-form") do |form| %>
   
@@ -11,4 +11,4 @@
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
 </div>
-<%= render "shared/second-footer" %>
+<%= render "shared/second_footer" %>
