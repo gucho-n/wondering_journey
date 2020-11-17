@@ -1,9 +1,20 @@
 class SearchesController < ApplicationController
+ 
   def index
-    
+  
   end
-  def detailSearch
-    @tweets = Tweet.search(params[:keyword])
-    render "searches/search"
+
+  def search
+     @tweets = Tweet.search(params[:namekeyword])
+
+     render "searches/search"
   end
+
+
+
+  # 詳細検索
+  
+
 end
+
+

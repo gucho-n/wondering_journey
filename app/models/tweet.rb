@@ -13,19 +13,11 @@ class Tweet < ApplicationRecord
 def self.search(search)
   if search != ""
     Tweet.where('name LIKE(?)', "%#{search}%")
+   
   else
     Tweet.all
   end
 end
-
-# 詳細検索
-def self.detailSearch(search)
-  if search != ""
-    Tweet.where('name LIKE(?)', "%#{search}%" )
-    redirect_to root_path
-  end
-end
-
 
 
 end
