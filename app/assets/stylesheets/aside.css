@@ -1,0 +1,46 @@
+//indexから
+
+aside{
+  width: 15%;
+  height: 100%;
+  background-color: gainsboro;
+  position: fixed;z-index:10;
+  min-width: 200px;
+
+}
+
+
+.open,
+.close{
+  display: none;
+}
+
+.open,
+.close{
+  display: block;
+}
+aside{
+  position: absolute;
+  left: -250px;
+  height: 100%;
+  //position absoluteをすると高さが子要素分しか出なくなる
+  translate: all 0.2s;
+  background: #ffffff;
+}
+
+// input[type = "checkbox"]：checked ~ aside{
+// position: absolute;
+// left: -50vw;
+// width: 10px;
+// height: 10px;
+// // top: 100px;
+// // left: 100px;  
+// }
+// input[type = "checkbox"]：checked ~ .back{
+//   position: absolute;
+//   left: -50vw;
+//   width: 10px;
+//   height: 10px;
+//   // top: 100px;
+//   // left: 100px;  
+//   }

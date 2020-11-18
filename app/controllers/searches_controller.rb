@@ -5,8 +5,7 @@ class SearchesController < ApplicationController
   end
 
   def search
-     @tweets = Tweet.search(params[:namekeyword])
-
+     @tweets = Tweet.name_Search(params[:namekeyword])
      render "searches/search"
   end
 

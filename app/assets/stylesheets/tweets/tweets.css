@@ -2,29 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-header{
-  position: fixed;z-index:100;//z-index:10;を追加
-  text-align:center;
-  width: 100%;
-}
-.top-logo-class{
-  position: relative;
-}
-.header-image{
-  width: 100%;
-  height: 13vh;
-  vertical-align:top;
-  position: relative;
-}
-.WonderingJourney { 
-  position: absolute;
-  font-size: 6em;
-  font-family: Monotype Corsiva, fantasy;
-  color: aliceblue;
-  right: 0;
-  bottom: 30%;
 
-}
 .header-btn{
  
   height: 5vh;
