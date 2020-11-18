@@ -1,34 +1,4 @@
+<%= render "shared/aside" %>
+<%= render "shared/index" %>
 
-<%= render "shared/header" %>
-<div class = index-container>
- <%= render "shared/aside" %>
-
-  <div class = "main-container">
-    <div class = "search-top">
-        <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
-          <%= form.text_field :keyword, placeholder: "撮影地で検索する", class: "search-input" %>
-          <%= form.submit "検索", class: "search-btn" %>
-        <% end %>
-    </div>
-    <div class = "tweets-container">
-      <% @tweets.each do |tweet| %> 
-        <div class= "tweet-image">
-          <ul class = "tweet-title"> 
-            <li class = "post-place">撮影地  <%=tweet.name %></li>
-          </ul>
-        <div class = "tweets-pic">
-          <%= link_to image_tag(tweet.image.variant(resize: '600x400')), tweet_path(tweet.id), class: 'message-image' if tweet.image.attached? %>
-          <p class = "post-name">投稿者  <%=tweet.user.nickname %></p>
-        </div>
-        <ui class ="hover-lists">
-          <li class = "hover-list" >住所：<%= tweet.address%></li>
-          <li class = "hover-list" >コメント：<%= tweet.recommend%></li>
-        </ui>
-      </div>
-      <% end %>
-    </div>    
-  </div>
-</div>
-
-
-
+  

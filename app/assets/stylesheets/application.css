@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+/* 共通部分 */
+body{
+  min-height: 100vh;
+  /* //親要素に最低限このくらいの高さが必要と記入 */
+}
+main{
+  position: relative;
+  display: flex;
+
+}
+
+
+

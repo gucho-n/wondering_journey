@@ -1,4 +1,4 @@
-<%= render "shared/header" %>
+
 <%= form_with model: @user, url: user_registration_path,id:"nanka",class: "devise-registration-main",local: true do |f| %>
   <div class = "devise-form-wrap">
     <div class = "devise-form-header">
@@ -46,4 +46,4 @@
   </div>
   <% end %>
   </div>
-  <%= render "shared/second_footer" %>
+  <%= render "shared/footer" %>

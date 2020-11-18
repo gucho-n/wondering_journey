@@ -1,46 +1,63 @@
-//indexから
+/* //indexから */
 
 aside{
-  width: 15%;
-  height: 100%;
-  background-color: gainsboro;
-  position: fixed;z-index:10;
+  width: 25%;
+  background-color: red;
   min-width: 200px;
-
 }
 
-
-.open,
-.close{
-  display: none;
+/* ハンバーガーメニュー実装 */
+/* 開け閉めを記入 */
+.open,.close{
+ display: none;
 }
+/* チェックボックスの作成 */
+input[type = "checkbox"]{
+  position: absolute;
+  left: -1000px;  
+  }
+  /* レスポンシブ対応 */
+ @media screen and (max-width:1000px){
+  .open,.close{
+    display: block;
+   }
+  .open{
+    position: absolute;
+  }
+  aside{
+    position: absolute;
+    left: -25%;
+    height: 100%;
+    /* positionを入れた要素には */
+    transition: all 0.3s;
+    background-color: beige;
+  } 
+  input[type = "checkbox"]:checked ~ aside{
+    left: 0;
+  }
 
-.open,
-.close{
-  display: block;
-}
-aside{
+  input[type = "checkbox"]:checked ~ .back{
+    left: 0;
+  }
+  
+ }
+
+
+/* aside{
   position: absolute;
   left: -250px;
   height: 100%;
-  //position absoluteをすると高さが子要素分しか出なくなる
-  translate: all 0.2s;
+  /* position absoluteをすると高さが子要素分しか出なくなるから、height: 100%;が必要になる */
+  /* translate: all 0.2s;
   background: #ffffff;
-}
+} */ *
+/* チェックボックスを画面から不可視化する（display-noneは） */
 
-// input[type = "checkbox"]：checked ~ aside{
-// position: absolute;
-// left: -50vw;
-// width: 10px;
-// height: 10px;
-// // top: 100px;
-// // left: 100px;  
-// }
-// input[type = "checkbox"]：checked ~ .back{
-//   position: absolute;
-//   left: -50vw;
-//   width: 10px;
-//   height: 10px;
-//   // top: 100px;
-//   // left: 100px;  
-//   }
+/* // input[type = "checkbox"]：checked ~ .back{
+  //   position: absolute;
+  //   left: -50vw;
+  //   width: 10px;
+  //   height: 10px;
+  //   // top: 100px;
+  //   // left: 100px;  
+  //   } */

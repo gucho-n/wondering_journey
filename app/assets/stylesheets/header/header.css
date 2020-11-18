@@ -4,8 +4,8 @@
 
 /* ヘッダーの作成 */
 header{
-  position: fixed;z-index:10;
-  /* z-index:10;を追加(ヘッダーは上に被せる) */
+  /* position: fixed;z-index:10;
+  z-index:10;を追加(ヘッダーは上に被せる) */
   width: 100%;
 }
 .header-top{
@@ -66,16 +66,26 @@ header{
   justify-content: flex-end;
 }
 
-body{
-  min-height: 100vh;
-  /* //親要素に最低限このくらいの高さが必要と記入 */
+/* レスポンシブ対応 */
+@media screen and (max-width:1200px){
+  body{
+    width: 100%;
+  }
+  .g-nav-left{
+    font-size: 2em;
+  }
+  .g-nav-right{
+    font-size: 2em;
+  }
 }
-
-
-main{
-  padding-top: 10%;
-  //直す↑
-  flex: 1;
+@media screen and (max-width:800px){
+  body{
+    width: 100%;
+  }
+  .g-nav-left{
+    font-size: 1.5em;
+  }
+  .g-nav-right{
+    font-size: 1.5em;
+  }
 }
-
-
