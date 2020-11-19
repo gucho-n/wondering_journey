@@ -11,10 +11,9 @@ class Tweet < ApplicationRecord
   validates :cost, numericality: { less_than_or_equal_to: over_price.to_i }
 # 基本検索
 
-def self.search(search)
+def self.nameSearch(search)
   if search != ""
-    Tweet.where('name LIKE(?) OR address LIKE(?)', "%#{search}%","%#{search}%")
-   
+    Tweet.where('name LIKE(?)',"%#{search}%")
   else
     Tweet.all
   end

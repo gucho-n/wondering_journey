@@ -1,7 +1,9 @@
 /* //indexから */
-
+/* 親要素がrelativeしたら子要素もabsoluteしないと、幅、高さの指定ができなくなる * positionを入れた要素には高さを指定すること */
 aside{
-  width: 25%;
+  position: absolute;
+  height: 100%;
+  width: 20%;
   background-color: red;
   min-width: 200px;
 }
@@ -28,7 +30,7 @@ input[type = "checkbox"]{
     position: absolute;
     left: -25%;
     height: 100%;
-    /* positionを入れた要素には */
+ 
     transition: all 0.3s;
     background-color: beige;
   } 
@@ -42,22 +44,9 @@ input[type = "checkbox"]{
   
  }
 
-
-/* aside{
-  position: absolute;
-  left: -250px;
-  height: 100%;
-  /* position absoluteをすると高さが子要素分しか出なくなるから、height: 100%;が必要になる */
-  /* translate: all 0.2s;
-  background: #ffffff;
-} */ *
-/* チェックボックスを画面から不可視化する（display-noneは） */
-
-/* // input[type = "checkbox"]：checked ~ .back{
-  //   position: absolute;
-  //   left: -50vw;
-  //   width: 10px;
-  //   height: 10px;
-  //   // top: 100px;
-  //   // left: 100px;  
-  //   } */
+/* サイドバーメニュー入力 */
+ .aside-title{
+   font-size: 4em;
+   text-align: center;
+   padding: 5%;
+ }

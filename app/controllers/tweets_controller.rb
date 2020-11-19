@@ -23,8 +23,8 @@ class TweetsController < ApplicationController
     params.require(:tweet).permit(:name, :address, :image, :recommend, :cost).merge(user_id: current_user.id)
   end
   
-  def search
-    @tweets = Tweet.search(params[:keyword])
+  def nameSearch
+    @tweets = Tweet.nameSearch(params[:keyword])
     render "searches/search"
   end
 
