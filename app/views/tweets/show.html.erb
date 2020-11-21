@@ -1,23 +1,23 @@
 <div class = "show-container">
-<div class = "show-image">
-  <div class = "show-pic">
-    <%= link_to image_tag(@tweet.image.variant(resize: '800x1500')), tweet_path(@tweet.id), class: 'message-image' if @tweet.image.attached? %>
-  </div>
-      <div class = "under-bar">
-        <h2 class ="show-detail">撮影先の情報 </h2>
-          <div class= under-container>
-            <ul class = info-title>
-              <li>所在地</li>
-              <li>備考</li>
-              <li>あなたの家からおよそ</li>
-            </ul>
-            <ul class = "info-list">  
-              <li><%= @tweet.address %></li>
-              <li><%= @tweet.recommend %></li>
-              <li><%= link_to "MAPはこちら", tweet_maps_path(@tweet.id) %><li>
-            </ul>
+  <div class = "show-image">
+    <div class = "show-pic">
+      <%= link_to image_tag(@tweet.image.variant(resize: '800x1500')), tweet_path(@tweet.id), class: 'message-image' if @tweet.image.attached? %>
     </div>
-  </div>  
+    <div class = "under-bar">
+        <h2 class ="show-detail">撮影先の情報 </h2>
+      <div class= under-container>
+        <ul class = info-title>
+          <li>所在地</li>
+          <li>備考</li>
+          <li>あなたの家からおよそ</li>
+        </ul>
+        <ul class = "info-list">  
+          <li><%= @tweet.address %></li>
+          <li><%= @tweet.recommend %></li>
+          <li><%= link_to "MAPはこちら", tweet_maps_path(@tweet.id) %><li>
+        </ul>
+      </div>
+    </div>  
   </div>
   
   <div class = "sub-container">
@@ -39,8 +39,7 @@
           <div class = "balloon">
             <li class = "ballon-left-from"><b><%=comment.user.nickname %></b></li>
             <li class ="balloon-left"><%=comment.text %></li>
-            
-          </div>
+           </div>
         <% else %>
            <div class = "balloon">
             <li class ="balloon-right"><%=comment.text %></li>
@@ -49,7 +48,7 @@
         <% end %>
       <% end %>
       </ul>
-    <div>
+    </div>
   <%# コメントインプット %>
       <%= form_with model: @comments,url: tweet_comments_path(@tweet),html: {class: "comment-text-form"}, local: true do |f|%>
         <div class="form-input">

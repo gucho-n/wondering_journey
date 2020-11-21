@@ -1,3 +1,7 @@
+.show-container{
+  display: flex;
+  width: 100%;
+}
 /* 左側 */
 .show-image{
   width: 60%;
