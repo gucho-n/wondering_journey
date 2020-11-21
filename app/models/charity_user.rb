@@ -6,12 +6,9 @@ class Charity_user
 
   with_options presence: true do
     #   # 氏名用
-    
+
     validates :token
-
-    
   end
-
 
   def save
     # ユーザーの情報を保存し、「itempurchase」という変数に入れている

@@ -1,22 +1,22 @@
 class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :gender
-  
+
   has_many :tweets
   has_many :comments
-  
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :nickname,presence: true
-  
-  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  validates :nickname, presence: true
+
+  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :password, format: { with: VALID_PASSWORD_REGEX }
 
-  VALID_EMAIL_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  VALID_EMAIL_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :email, format: { with: VALID_EMAIL_REGEX }
-  
+
   # VALID_NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze
   # validates :surname, format: { with: VALID_NAME_REGEX }
   # validates :firstname, format: { with: VALID_NAME_REGEX }

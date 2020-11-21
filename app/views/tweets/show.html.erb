@@ -1,9 +1,8 @@
-
 <div class = "show-container">
-  <div class = "show-image">
-        <div class = "show-pic">
-          <%= link_to image_tag(@tweet.image.variant(resize: '800x1500')), tweet_path(@tweet.id), class: 'message-image' if @tweet.image.attached? %>
-        </div>
+<div class = "show-image">
+  <div class = "show-pic">
+    <%= link_to image_tag(@tweet.image.variant(resize: '800x1500')), tweet_path(@tweet.id), class: 'message-image' if @tweet.image.attached? %>
+  </div>
       <div class = "under-bar">
         <h2 class ="show-detail">撮影先の情報 </h2>
           <div class= under-container>
@@ -31,7 +30,7 @@
       </div>
     </div>
     <div class = "com-container">  
-      <div class = "com-title">
+      <div class = "com-title-container">
         <h2 class ="com-title-list">コメント欄</h2>
       </div>
       <ul class ="comment-lists">    
@@ -59,5 +58,5 @@
           <%= f.submit '送信', class: 'form-submit' %>
         </div>
       <% end %>
-<div> 
+</div>
 

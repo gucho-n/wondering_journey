@@ -1,15 +1,4 @@
-
-.tweet-title{
-  font-size: 2.4cm;
- }
- .show-container{
-  
-  padding-top: 8.5%;
-  width: 100%;
-  min-width: 800px;
-  display: flex;
-  height:1300px;
- }
+/* 左側 */
 .show-image{
   width: 60%;
   background-color: #333333;
@@ -38,7 +27,7 @@
   padding-left: 5%;
 }
 
-
+/* 右側 */
 .info-title{
   width: 30%;
   font-size: 2.4em;
@@ -49,15 +38,18 @@
   font-size: 2.4em;
   color: white;
 }
-//右側
+/* 右側 */
 .poster-title{
   font-size: 3em;
-  text-align: center;
-  padding-top: 10%;
+
+
 }
 .poster-container{
-  height: 150px;
+  height: 100px;
   background-color: springgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .poster-comment{
   padding: 15px;
@@ -79,16 +71,18 @@
 
 
 }
-.com-title{
-  height: 10%;
+.com-title-container{
+  display: flex;
+  height: 20%;
+  align-items: center;
+  justify-content: center;
 }
+
 .com-title-list{
-font-size: 4em;
-text-align: center;
+  font-size: 3em;
 }
 .comment-lists{
-
-  font-size: 2.4em;
+  font-size: 3em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,7 +120,7 @@ text-align: center;
   }
   
 
-  //吹き出し
+  /* //吹き出し */
   .balloon{
     margin-top: 5px;
     width: 100%;
@@ -188,7 +182,7 @@ text-align: center;
     z-index: -1;
   }
 
-  /*　右向き　*/
+  /*右向き*/
 .balloon-right {
   position: relative;
   display: inline-block;

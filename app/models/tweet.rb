@@ -4,29 +4,27 @@ class Tweet < ApplicationRecord
 
   has_many :comments
   less_price = 1000
-  over_price = 1000000
-  validates :name,:address,:recommend,:cost,presence: true
+  over_price = 1_000_000
+  validates :name, :address, :recommend, :cost, presence: true
   validates :cost, numericality: { only_interger: true }
   validates :cost, numericality: { greater_than_or_equal_to: less_price.to_i }
   validates :cost, numericality: { less_than_or_equal_to: over_price.to_i }
-# 基本検索
+  # 基本検索
 
-def self.nameSearch(search)
-  if search != ""
-    Tweet.where('name LIKE(?)',"%#{search}%")
-  else
-    Tweet.all
+  def self.nameSearch(search)
+    Tweet.where('name LIKE(?)', "%#{search}%") if search != ''
   end
-end
 
-# 詳細検索、なぜか増減するexpect
-def self.name_Search(namekeyword)
-  if namekeyword != ""
-    Tweet.where(['name LIKE(?) && address LIKE(?)', "%#{namekeyword}%", "%#{namekeyword}%"])
+  def self.addressSearch(search)
+    Tweet.where('address LIKE(?)', "%#{search}%") if search != ''
   end
-end
 
-# 詳細検索、なぜか増減するexpect
+  # # 詳細検索、なぜか増減するexpect
+  # def self.name_Search(namekeyword)
+  #   if namekeyword != ""
+  #     Tweet.where(['name LIKE(?) && address LIKE(?)', "%#{namekeyword}%", "%#{namekeyword}%"])
+  #   end
+  # end
 
-
+  # 詳細検索、なぜか増減するexpect
 end

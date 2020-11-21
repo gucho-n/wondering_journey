@@ -7,68 +7,47 @@
     width: 100%;
   }
   
-  .search-top{
-    width: 100% - 15%;
-    height: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    background-color: aquamarine;
-    
-  }
-  .search-form{
-  
-    font-size: 2.0em;
-    
-  }
-  .search-input{
-    width: 20vw;
-    height: ５％;
-    font-size: 2.0em;
-  }
-  
-  
+
   .tweets-container{
-   padding-top: 10%;
-   overflow: scroll;
-   display: flex;
+    padding-top: 10%;
+    overflow: scroll;
+    display: flex;
+   }
+   .tweet-image{
+     width: 50%;
+     height: 50%;
+     padding: 1%;
+   }
+   .tweet-title{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+    
+   }
  
-
-  }
-  .tweet-image{
-    width: 50%;
-    height: 50%;
-    padding: 1%;
-  }
-  .tweet-title{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+   .post-place{
+     font-size: 40px;
+   }
+   .post-name{
+     font-size: 40px;
+   }
    
-  }
+   .get-comment{
+     display: flex;
+     justify-content: space-between;
+   }
+   .sub-container{
+     width: 100%;
+   }
+   .hover-lists{
+     width: auto;
+     height: 200px;
+     background-color: beige;
+     font-size: 2.4em;
+     padding: 15px;
 
-  .post-place{
-    font-size: 40px;
-  }
-  .post-name{
-    font-size: 40px;
-  }
-  
-  .get-comment{
-    display: flex;
-    justify-content: space-between;
-  }
-  .sub-container{
-    width: 100%;
-  }
-  .hover-lists{
-    width: auto;
-    height: 200px;
-    background-color: beige;
-    font-size: 2.4em;
-    padding: 15px;
-  }
-  
-
-  
+   }
+   
+ 
+   
+ 

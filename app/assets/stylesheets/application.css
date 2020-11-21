@@ -17,6 +17,7 @@
 /* 共通部分 */
 body{
   min-height: 100vh;
+  position: relative;
   /* //親要素に最低限このくらいの高さが必要と記入 */
 }
 main{

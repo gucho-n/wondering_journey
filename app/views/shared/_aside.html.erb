@@ -10,12 +10,18 @@
 <%# 🍔 %>
 <nav>
 <h2 class = "aside-title">検索<h2>
-  <ul class = "search-top">
-    <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "撮影地で検索する", class: "search-input" %>
-      <%= form.submit "検索", class: "search-btn" %>
-        <% end %>
-    </div>
+  <ul class = "search-container">
+    <%= form_with(url: nameSearch_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "撮影地で検索する", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
+  </ul>
+    <ul class = "search-container">
+    <%= form_with(url: addressSearch_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "住所で検索する", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
+  </ul>
 
 </nav>
 <div class = "bottom-bar">

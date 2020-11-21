@@ -3,21 +3,16 @@ class CommentsController < ApplicationController
   # コントローラーを新たに作成した理由はコメントの保存が必要だから
   # コメントのインスタンスの生成は、tweetcontrollerでもいいのかな？
 
-
-  def create 
-    
-    if @comments = Comment.create(comment_params)
-      redirect_to tweet_path(params[:tweet_id])
+  def create
+    redirect_to tweet_path(params[:tweet_id]) if @comments = Comment.create(comment_params)
   end
-end
-  
+
   def comment_params
     # 左側のパラメーターはform_withで入力した値。後のmergeは自分で入力する値。（ params[:tweet_id]は遷移した時にとるtweetidを選んでいる）
-    params.require(:comment).permit(:text).merge(user_id: current_user.id,tweet_id: params[:tweet_id])
+    params.require(:comment).permit(:text).merge(user_id: current_user.id, tweet_id: params[:tweet_id])
   end
+
   def resist
-    unless user_signed_in?
-      redirect_to new_user_registration_path
-    end
+    redirect_to new_user_registration_path unless user_signed_in?
   end
 end
